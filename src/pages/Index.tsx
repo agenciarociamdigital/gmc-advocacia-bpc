@@ -84,11 +84,11 @@ const Index = () => {
       
       {/* Fixed Top Banner */}
       <div className="fixed top-0 left-0 w-full bg-[#00001f]/80 text-white z-50 py-3 px-4 text-center shadow-lg backdrop-blur-md backdrop-saturate-150">
-        <p className="text-lg md:text-xl font-bold animate-pulse flex items-center justify-center">
+        <p className="text-base md:text-xl font-bold animate-pulse flex items-center justify-center flex-wrap">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 animate-bounce" viewBox="0 0 20 20" fill="currentColor">
             <path fillRule="evenodd" d="M16.707 10.293a1 1 0 010 1.414l-6 6a1 1 0 01-1.414 0l-6-6a1 1 0 111.414-1.414L9 14.586V3a1 1 0 012 0v11.586l4.293-4.293a1 1 0 011.414 0z" clipRule="evenodd" />
           </svg>
-          TEM 65 ANOS OU MAIS?
+          <span>TEM 65 ANOS OU MAIS?</span>
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 animate-bounce" viewBox="0 0 20 20" fill="currentColor">
             <path fillRule="evenodd" d="M16.707 10.293a1 1 0 010 1.414l-6 6a1 1 0 01-1.414 0l-6-6a1 1 0 111.414-1.414L9 14.586V3a1 1 0 012 0v11.586l4.293-4.293a1 1 0 011.414 0z" clipRule="evenodd" />
           </svg>
@@ -112,9 +112,9 @@ const Index = () => {
             }}
             aria-hidden="true"
           />
-          <div className="gms-container relative z-10 py-12 md:py-16 lg:py-20">
+          <div className="gms-container relative z-10 py-12 md:py-16 lg:py-20 px-4 sm:px-6">
             <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-              <div className="max-w-2xl">
+              <div className="max-w-2xl w-full">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -123,7 +123,7 @@ const Index = () => {
                   <div className="flex justify-center md:justify-start mb-4">
                     <Logo />
                   </div>
-                  <div className="relative mb-3">
+                  <div className="relative mb-3 text-center md:text-left">
                     <div className="inline-block bg-gms-gold/10 px-3 py-1.5 rounded-sm border-l-4 border-gms-gold">
                       <motion.div
                         initial={{ opacity: 0 }}
@@ -139,15 +139,15 @@ const Index = () => {
                       </motion.div>
                     </div>
                   </div>
-                  <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4">
+                  <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4 text-center md:text-left">
                     <span className="block md:inline">Você Pode Ter Direito A </span>
-                    <span className="text-gms-gold whitespace-nowrap">R$ 1.518,00 Mensais</span>
+                    <span className="text-gms-gold whitespace-normal md:whitespace-nowrap">R$ 1.518,00 Mensais</span>
                     <span className="block md:inline"> Do Governo.</span>
                   </h1>
-                  <p className="text-lg md:text-xl lg:text-2xl mb-5 opacity-80">
+                  <p className="text-lg md:text-xl lg:text-2xl mb-5 opacity-80 text-center md:text-left">
                     Idosos acima de 65 anos ou pessoas com deficiência de baixa renda podem ter direito ao BPC LOAS. Descubra se você é elegível.
                   </p>
-                  <div className="flex flex-col sm:flex-row gap-3">
+                  <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
                     <WhatsAppButton text="Avalie Seu Caso Gratuitamente" />
                     <a 
                       href="#quem-tem-direito" 
@@ -427,11 +427,11 @@ const Index = () => {
         </section>
 
         {/* Documentos necessários */}
-        <section className="py-20 bg-white">
-          <div className="gms-container">
+        <section className="py-20 bg-white overflow-hidden">
+          <div className="gms-container px-4 sm:px-6">
             <div className="flex flex-col lg:flex-row items-center gap-12">
               <motion.div 
-                className="lg:w-1/2"
+                className="lg:w-1/2 w-full"
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -467,7 +467,7 @@ const Index = () => {
                           <Check className="h-3 w-3 text-gms-gold" />
                         </div>
                       </div>
-                      <span className="ml-3 text-gray-700">{item}</span>
+                      <span className="ml-3 text-gray-700 break-words">{item}</span>
                     </motion.li>
                   ))}
                 </ul>
@@ -480,7 +480,7 @@ const Index = () => {
               </motion.div>
               
               <motion.div 
-                className="lg:w-1/2"
+                className="lg:w-1/2 w-full"
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -495,7 +495,7 @@ const Index = () => {
                     width="600"
                     height="320"
                   />
-                  <div className="p-8">
+                  <div className="p-6 sm:p-8">
                     <h3 className="text-2xl font-bold text-gms-brown mb-4">
                       Conte com nossa experiência
                     </h3>
@@ -514,8 +514,8 @@ const Index = () => {
         </section>
 
         {/* Dúvidas Frequentes */}
-        <section className="py-20 bg-gms-brown/5">
-          <div className="gms-container">
+        <section className="py-20 bg-gms-brown/5 overflow-hidden">
+          <div className="gms-container px-4 sm:px-6">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -572,20 +572,21 @@ const Index = () => {
         </section>
 
         {/* CTA Final */}
-        <section className="py-20 bg-gms-brown text-white">
-          <div className="gms-container">
+        <section className="py-20 bg-gms-brown text-white overflow-hidden">
+          <div className="gms-container px-4 sm:px-6">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
+                className="w-full"
               >
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
                   Não perca a oportunidade de garantir seu direito ao BPC LOAS
                 </h2>
                 <p className="text-xl opacity-80 mb-6">
-                  Preencha o formulário ao lado e receba uma avaliação gratuita do seu caso. Nossos especialistas estão prontos para ajudar.
+                  Preencha o formulário e receba uma avaliação gratuita do seu caso. Nossos especialistas estão prontos para ajudar.
                 </p>
                 <div className="flex flex-col gap-6">
                   <div className="flex items-start">
@@ -620,16 +621,17 @@ const Index = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
+                className="w-full"
               >
-                <LeadForm />
+                <LeadForm className="max-w-full w-full" />
               </motion.div>
             </div>
           </div>
         </section>
 
         {/* Footer */}
-        <footer className="bg-gms-brown text-white pt-8 border-t border-white/10">
-          <div className="gms-container">
+        <footer className="bg-gms-brown text-white pt-8 border-t border-white/10 overflow-hidden">
+          <div className="gms-container px-4 sm:px-6">
             <div className="flex flex-col items-center mb-8">
               <Logo />
               <div className="mt-6 flex flex-col items-center">
