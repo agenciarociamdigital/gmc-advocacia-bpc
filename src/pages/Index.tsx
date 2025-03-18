@@ -141,7 +141,7 @@ const Index = () => {
                     <span className="block md:inline"> Do Governo.</span>
                   </h1>
                   <p className="text-xl md:text-2xl mb-8 opacity-80">
-                    Idosos acima de 65 anos ou pessoas com deficiência de baixa renda podem ter direito ao BPC LOAS. Descubra agora se você é elegível.
+                    Idosos acima de 650 anos ou pessoas com deficiência de baixa renda podem ter direito ao BPC LOAS. Descubra agora se você é elegível.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4">
                     <WhatsAppButton text="Avalie Seu Caso Gratuitamente" />
