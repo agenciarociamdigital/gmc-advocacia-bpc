@@ -59,11 +59,11 @@ const Index = () => {
       alt: "Escritório GMS Advocacia"
     },
     {
-      src: "/img3_equipe_bpcloas.jpeg",
+      src: "/img3_bpcloas.jpeg",
       alt: "Equipe GMS Advocacia"
     },
     {
-      src: "/img4.jpeg",
+      src: "/logo.jpeg", // Fixed the image path to follow the same naming convention
       alt: "Equipe GMS Advocacia"
     }
   ];
