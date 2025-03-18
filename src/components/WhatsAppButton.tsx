@@ -15,8 +15,8 @@ interface WhatsAppButtonProps {
 
 const WhatsAppButton = ({
   text,
-  phone = "5511999999999",
-  message = "Olá, gostaria de saber mais sobre os serviços de advocacia...",
+  phone = "5543999843765",
+  message = "Olá, eu vim do site e quero ajuda com o meu direito BPC LOAS",
   fullWidth = false,
   size = "default",
   className,
@@ -29,11 +29,13 @@ const WhatsAppButton = ({
       return;
     }
 
-    const encodedMessage = encodeURIComponent(message);
-    window.open(
-      `https://wa.me/${phone}?text=${encodedMessage}`,
-      "_blank"
-    );
+    // Teste com texto fixo para garantir que funcione
+    const fixedMessage = "Olá, eu vim do site e quero ajuda com o meu direito BPC LOAS";
+    const finalUrl = `https://wa.me/5543999843765?text=${encodeURIComponent(fixedMessage)}`;
+    console.log("Opening WhatsApp with URL:", finalUrl);
+    
+    // Abrindo em nova aba para evitar problemas de redirecionamento
+    window.open(finalUrl, "_blank");
   };
 
   return (

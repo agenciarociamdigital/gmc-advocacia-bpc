@@ -46,12 +46,19 @@ const LeadForm = ({ className }: LeadFormProps) => {
     // Here we'll simulate a successful submission
     setSubmitted(true);
     
-    // In a real implementation you would redirect to WhatsApp with the info
+    // Redirect to WhatsApp with standardized message
     setTimeout(() => {
-      // Format info for WhatsApp message
-      const message = `Olá! Meu nome é ${name} e gostaria de mais informações sobre o BPC LOAS para ${clientType === "elderly" ? "idosos" : "pessoas com deficiência"}.`;
-      const encodedMessage = encodeURIComponent(message);
-      window.open(`https://wa.me/5551982435512?text=${encodedMessage}`, "_blank");
+      // Formatando a mensagem com os dados do usuário
+      const baseMessage = "Olá, eu vim do site e quero ajuda com o meu direito BPC LOAS";
+      const userInfo = `\n\nNome: ${name}\nTelefone: ${phone}\nTipo: ${clientType === 'elderly' ? 'Idoso (65+ anos)' : 'Pessoa com Deficiência'}`;
+      const completeMessage = baseMessage + userInfo;
+      
+      // Usando a URL padrão do WhatsApp (wa.me)
+      const finalUrl = `https://wa.me/5543999843765?text=${encodeURIComponent(completeMessage)}`;
+      console.log("Redirecting to WhatsApp with URL:", finalUrl);
+      
+      // Usando window.location para redirecionar na mesma página
+      window.location.href = finalUrl;
     }, 1500);
   };
 

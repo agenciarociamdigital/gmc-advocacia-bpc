@@ -25,10 +25,12 @@ const FloatingWhatsApp = () => {
   }, []);
 
   const handleClick = () => {
-    window.open(
-      "https://wa.me/5511999999999?text=Olá, gostaria de saber mais sobre os serviços de advocacia.",
-      "_blank"
-    );
+    const fixedMessage = "Olá, eu vim do site e quero ajuda com o meu direito BPC LOAS";
+    const finalUrl = `https://wa.me/5543999843765?text=${encodeURIComponent(fixedMessage)}`;
+    console.log("Opening WhatsApp with URL:", finalUrl);
+    
+    // Abrindo em nova aba para evitar problemas de redirecionamento
+    window.open(finalUrl, "_blank");
   };
 
   if (!visible) return null;
