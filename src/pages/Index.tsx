@@ -368,7 +368,7 @@ const Index = () => {
                   />
                 </div>
                 <p className="mt-4 font-serif text-lg">Equipe GMS Advocacia</p>
-                <p className="text-sm opacity-70">Premiada como "Melhor Escritório de Advocacia de São Sebastião da Amoreira 2023"</p>
+                <p className="text-sm bg-gradient-to-r from-amber-500 via-yellow-300 to-amber-500 bg-clip-text text-transparent font-medium">Premiada como "Melhor Escritório de Advocacia de São Sebastião da Amoreira 2023"</p>
               </div>
             </div>
           </div>
