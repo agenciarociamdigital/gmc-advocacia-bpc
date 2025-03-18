@@ -16,7 +16,7 @@ interface WhatsAppButtonProps {
 const WhatsAppButton = ({
   text,
   phone = "5511999999999",
-  message = "Olá, gostaria de saber mais sobre os serviços de advocacia.",
+  message = "Olá, gostaria de saber mais sobre os serviços de advocacia...",
   fullWidth = false,
   size = "default",
   className,
