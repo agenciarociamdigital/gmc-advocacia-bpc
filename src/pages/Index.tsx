@@ -151,7 +151,7 @@ const Index = () => {
                     <WhatsAppButton text="Avalie Seu Caso Gratuitamente" />
                     <a 
                       href="#quem-tem-direito" 
-                      className="primary-button border border-white/20 bg-transparent hover:bg-white/10 flex items-center justify-center gap-2"
+                      className="primary-button border border-white/20 bg-transparent hover:bg-white/10 flex items-center justify-center gap-2 w-full sm:w-auto py-3 px-6 text-base font-medium"
                     >
                       Descubra Se Você Tem Direito
                       <ArrowRight className="h-5 w-5" />
