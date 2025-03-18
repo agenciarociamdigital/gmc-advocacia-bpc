@@ -1,6 +1,6 @@
-import { useEffect, useState, useRef, lazy, Suspense } from "react";
+import { useEffect, useState, useRef, lazy, Suspense, useCallback } from "react";
 import { motion } from "framer-motion";
-import { MessageSquare, Users, Scroll, Calendar, ClipboardList, ArrowRight, Award, Clock, Check, UserCheck, HelpCircle, Briefcase, User, UserPlus, ShieldCheck, Lock } from "lucide-react";
+import { MessageSquare, Users, Scroll, Calendar, ClipboardList, ArrowRight, Award, Clock, Check, UserCheck, HelpCircle, Briefcase, User, UserPlus, ShieldCheck, Lock, ChevronLeft, ChevronRight } from "lucide-react";
 
 // Components
 import Logo from "@/components/Logo";
@@ -46,6 +46,41 @@ const Index = () => {
   const [showFloatingWhatsApp, setShowFloatingWhatsApp] = useState(false);
   const quemTemDireitoRef = useRef<HTMLElement>(null);
   const [vagasRestantes, setVagasRestantes] = useState(20);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
+  // Updated array with only images from the public directory
+  const officeImages = [
+    {
+      src: "/img1_equipe_bpcloas.jpeg",
+      alt: "Advogado GMS"
+    },
+    {
+      src: "/img2_equipe_bpcloas.jpeg",
+      alt: "Escritório GMS Advocacia"
+    },
+    {
+      src: "/img3_equipe_bpcloas.jpeg",
+      alt: "Equipe GMS Advocacia"
+    },
+    {
+      src: "/img4.jpeg",
+      alt: "Equipe GMS Advocacia"
+    }
+  ];
+  
+  // Function to handle automatic slide change
+  const nextSlide = useCallback(() => {
+    setCurrentSlide((prevSlide) => (prevSlide + 1) % officeImages.length);
+  }, [officeImages.length]);
+  
+  // Set up auto-rotation for the carousel
+  useEffect(() => {
+    const slideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+    
+    return () => {
+      clearInterval(slideInterval);
+    };
+  }, [nextSlide]);
 
   useEffect(() => {
     // Add scrollbar styles to head
@@ -326,10 +361,10 @@ const Index = () => {
                   <img 
                     src="/lovable-uploads/1b8f1c9c-786f-4333-aa31-a715dae06d62.png" 
                     alt="Equipe GMS Advocacia" 
-                    className="w-20 h-20 rounded-full object-cover border-2 border-gms-gold"
+                    className="w-32 h-32 rounded-full object-cover border-2 border-gms-gold"
                     loading="lazy"
-                    width="80"
-                    height="80"
+                    width="128"
+                    height="128"
                   />
                 </div>
                 <p className="mt-4 font-serif text-lg">Equipe GMS Advocacia</p>
@@ -516,14 +551,57 @@ const Index = () => {
                 transition={{ duration: 0.5 }}
               >
                 <div className="bg-white shadow-xl rounded-lg overflow-hidden">
-                  <img 
-                    src="/lovable-uploads/29424d6c-1e60-40a4-b9bd-03be27565433.png" 
-                    alt="Equipe GMS Advocacia" 
-                    className="w-full h-80 object-cover"
-                    loading="lazy"
-                    width="600"
-                    height="320"
-                  />
+                  {/* Image carousel replacing the single image */}
+                  <div className="relative h-80">
+                    {/* Carousel images */}
+                    {officeImages.map((image, index) => (
+                      <div 
+                        key={index}
+                        className={`absolute inset-0 transition-opacity duration-500 ${
+                          index === currentSlide ? "opacity-100" : "opacity-0"
+                        }`}
+                      >
+                        <img 
+                          src={image.src} 
+                          alt={image.alt} 
+                          className="w-full h-80 object-cover"
+                          loading={index === 0 ? "eager" : "lazy"}
+                          width="600"
+                          height="320"
+                        />
+                      </div>
+                    ))}
+                    
+                    {/* Navigation buttons */}
+                    <button 
+                      onClick={() => setCurrentSlide((prevSlide) => (prevSlide - 1 + officeImages.length) % officeImages.length)}
+                      className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 transition-colors p-2 rounded-full text-white"
+                      aria-label="Imagem anterior"
+                    >
+                      <ChevronLeft className="h-5 w-5" />
+                    </button>
+                    <button 
+                      onClick={() => setCurrentSlide((prevSlide) => (prevSlide + 1) % officeImages.length)}
+                      className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 transition-colors p-2 rounded-full text-white"
+                      aria-label="Próxima imagem"
+                    >
+                      <ChevronRight className="h-5 w-5" />
+                    </button>
+                    
+                    {/* Dots indicator */}
+                    <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-2">
+                      {officeImages.map((_, index) => (
+                        <button
+                          key={index}
+                          onClick={() => setCurrentSlide(index)}
+                          className={`h-2 w-2 rounded-full transition-colors ${
+                            index === currentSlide ? "bg-white" : "bg-white/50"
+                          }`}
+                          aria-label={`Ver imagem ${index + 1}`}
+                        />
+                      ))}
+                    </div>
+                  </div>
                   <div className="p-6 sm:p-8">
                     <h3 className="text-2xl font-bold text-gms-brown mb-4">
                       Conte com nossa experiência
