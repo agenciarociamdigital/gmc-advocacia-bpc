@@ -83,7 +83,7 @@ const Index = () => {
       <BackToTop />
       
       {/* Fixed Top Banner */}
-      <div className="fixed top-0 left-0 w-full bg-gms-gold text-gms-brown z-50 py-3 px-4 text-center shadow-md">
+      <div className="fixed top-0 left-0 w-full bg-[#00001f]/80 text-white z-50 py-3 px-4 text-center shadow-lg backdrop-blur-md backdrop-saturate-150">
         <p className="text-lg md:text-xl font-bold animate-pulse flex items-center justify-center">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 animate-bounce" viewBox="0 0 20 20" fill="currentColor">
             <path fillRule="evenodd" d="M16.707 10.293a1 1 0 010 1.414l-6 6a1 1 0 01-1.414 0l-6-6a1 1 0 111.414-1.414L9 14.586V3a1 1 0 012 0v11.586l4.293-4.293a1 1 0 011.414 0z" clipRule="evenodd" />
