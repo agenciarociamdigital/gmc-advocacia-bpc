@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef, lazy, Suspense } from "react";
 import { motion } from "framer-motion";
-import { MessageSquare, Users, Scroll, Calendar, ClipboardList, ArrowRight, Award, Clock, Check, UserCheck, HelpCircle, Briefcase, User, UserPlus, ShieldCheck } from "lucide-react";
+import { MessageSquare, Users, Scroll, Calendar, ClipboardList, ArrowRight, Award, Clock, Check, UserCheck, HelpCircle, Briefcase, User, UserPlus, ShieldCheck, Lock } from "lucide-react";
 
 // Components
 import Logo from "@/components/Logo";
@@ -13,6 +13,7 @@ const FAQItem = lazy(() => import("@/components/FAQItem"));
 import LeadForm from "@/components/LeadForm";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import BackToTop from "@/components/BackToTop";
+import ActivityNotification from "@/components/ActivityNotification";
 
 // Global CSS for scrollbar
 const scrollbarStyles = `
@@ -44,6 +45,7 @@ const scrollbarStyles = `
 const Index = () => {
   const [showFloatingWhatsApp, setShowFloatingWhatsApp] = useState(false);
   const quemTemDireitoRef = useRef<HTMLElement>(null);
+  const [vagasRestantes, setVagasRestantes] = useState(20);
 
   useEffect(() => {
     // Add scrollbar styles to head
@@ -73,6 +75,9 @@ const Index = () => {
     // Initial check (in case the section is visible on load)
     handleScroll();
 
+    // Gerar um número aleatório entre 5 e 20 para vagas restantes
+    setVagasRestantes(Math.floor(Math.random() * 16) + 5);
+
     // Remove event listener on cleanup
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -81,6 +86,9 @@ const Index = () => {
     <div className="min-h-screen bg-gms-light overflow-hidden">
       {/* Back to Top Button */}
       <BackToTop />
+      
+      {/* Activity Notification - Positioned as fixed element */}
+      <ActivityNotification />
       
       {/* Fixed Top Banner */}
       <div className="fixed top-0 left-0 w-full bg-[#00001f]/80 text-white z-50 py-3 px-4 text-center shadow-lg backdrop-blur-md backdrop-saturate-150">
@@ -112,7 +120,7 @@ const Index = () => {
             }}
             aria-hidden="true"
           />
-          <div className="gms-container relative z-10 py-12 md:py-16 lg:py-20 px-4 sm:px-6">
+          <div className="gms-container relative z-10 py-8 md:py-12 lg:py-16 px-4 sm:px-6">
             <div className="flex flex-col md:flex-row items-center justify-between gap-8">
               <div className="max-w-2xl w-full">
                 <motion.div
@@ -120,10 +128,8 @@ const Index = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <div className="flex justify-center md:justify-start mb-4">
-                    <Logo />
-                  </div>
-                  <div className="relative mb-3 text-center md:text-left">
+                  {/* Logo removed from here */}
+                  <div className="relative mb-2 text-center md:text-left">
                     <div className="inline-block bg-gms-gold/10 px-3 py-1.5 rounded-sm border-l-4 border-gms-gold">
                       <motion.div
                         initial={{ opacity: 0 }}
@@ -139,6 +145,7 @@ const Index = () => {
                       </motion.div>
                     </div>
                   </div>
+                  
                   <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4 text-center md:text-left">
                     <span className="block md:inline">Você Pode Ter Direito A </span>
                     <span className="text-gms-gold whitespace-normal md:whitespace-nowrap">R$ 1.518,00 Mensais</span>
@@ -147,6 +154,15 @@ const Index = () => {
                   <p className="text-lg md:text-xl lg:text-2xl mb-5 opacity-80 text-center md:text-left">
                     Idosos acima de 65 anos ou pessoas com deficiência de baixa renda podem ter direito ao BPC LOAS. Descubra se você é elegível.
                   </p>
+                  
+                  {/* Adicionar banner de pagamento apenas ao conseguir o benefício */}
+                  <div className="bg-gms-gold/20 border border-gms-gold/30 rounded-md p-3 mb-5 flex items-center gap-3">
+                    <ShieldCheck className="h-5 w-5 text-gms-gold flex-shrink-0" />
+                    <p className="text-sm font-medium">
+                      <span className="text-gms-gold font-bold">Não pague nada</span> até conseguir seu benefício. Avaliação 100% gratuita.
+                    </p>
+                  </div>
+                  
                   <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
                     <WhatsAppButton text="Avalie Seu Caso Gratuitamente" />
                     <a 
@@ -161,12 +177,25 @@ const Index = () => {
               </div>
               
               <motion.div
-                className="hidden md:block max-w-md"
+                className="hidden md:block max-w-md w-full"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
-                <LeadForm className="hover:scale-[1.01] transition-transform duration-300" />
+                <div className="relative">
+                  {/* Indicador de vagas limitadas centralizado acima do formulário */}
+                  <div className="absolute -top-4 left-0 right-0 mx-auto w-max bg-red-600 text-white px-4 py-1.5 rounded-full font-bold text-sm shadow-lg animate-pulse z-10">
+                    Restam apenas {vagasRestantes} vagas!
+                  </div>
+                  
+                  <LeadForm className="hover:scale-[1.01] transition-transform duration-300" />
+                  
+                  {/* Selo de segurança centralizado abaixo do formulário */}
+                  <div className="absolute -bottom-4 left-0 right-0 mx-auto w-max bg-white/90 text-gms-brown px-4 py-1.5 rounded-md text-xs flex items-center gap-1 shadow-md">
+                    <Lock className="h-3 w-3" />
+                    Seus dados estão protegidos
+                  </div>
+                </div>
               </motion.div>
             </div>
           </div>
@@ -571,7 +600,7 @@ const Index = () => {
           </div>
         </section>
 
-        {/* CTA Final */}
+        {/* CTA Final - adicionar selo de segurança e contador de vagas */}
         <section className="py-20 bg-gms-brown text-white overflow-hidden">
           <div className="gms-container px-4 sm:px-6">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -610,7 +639,15 @@ const Index = () => {
                       <Calendar className="h-5 w-5 text-gms-gold" />
                     </div>
                     <p className="ml-3 opacity-80">
-                      <strong className="text-gms-gold">Vagas limitadas:</strong> Temos um número limitado de avaliações gratuitas por semana.
+                      <strong className="text-gms-gold">Vagas limitadas:</strong> Apenas {vagasRestantes} avaliações gratuitas disponíveis esta semana.
+                    </p>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="flex-shrink-0 mt-1">
+                      <ShieldCheck className="h-5 w-5 text-gms-gold" />
+                    </div>
+                    <p className="ml-3 opacity-80">
+                      <strong className="text-gms-gold">Sem pagamento adiantado:</strong> Você só paga quando conseguir seu benefício.
                     </p>
                   </div>
                 </div>
@@ -623,7 +660,20 @@ const Index = () => {
                 transition={{ duration: 0.5 }}
                 className="w-full"
               >
-                <LeadForm className="max-w-full w-full" />
+                <div className="relative">
+                  {/* Indicador de vagas limitadas centralizado acima do formulário */}
+                  <div className="absolute -top-4 left-0 right-0 mx-auto w-max bg-red-600 text-white px-4 py-1.5 rounded-full font-bold text-sm shadow-lg animate-pulse z-10">
+                    Restam apenas {vagasRestantes} vagas!
+                  </div>
+                  
+                  <LeadForm className="max-w-full w-full" />
+                  
+                  {/* Selo de segurança centralizado abaixo do formulário */}
+                  <div className="absolute -bottom-4 left-0 right-0 mx-auto w-max bg-white/90 text-gms-brown px-4 py-1.5 rounded-md text-xs flex items-center gap-1 shadow-md">
+                    <Lock className="h-3 w-3" />
+                    Seus dados estão protegidos
+                  </div>
+                </div>
               </motion.div>
             </div>
           </div>
