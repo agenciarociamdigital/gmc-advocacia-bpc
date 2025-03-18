@@ -544,7 +544,7 @@ const Index = () => {
 
         {/* Dúvidas Frequentes */}
         <section className="py-20 bg-gms-brown/5 overflow-hidden">
-          <div className="gms-container px-4 sm:px-6">
+          <div className="gms-container px-2 sm:px-6 max-w-full">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -556,14 +556,14 @@ const Index = () => {
                   Dúvidas Frequentes
                 </h2>
                 <div className="h-1 w-24 bg-gms-gold mx-auto mb-6"></div>
-                <p className="text-lg text-gray-600">
+                <p className="text-lg text-gray-600 px-4">
                   Esclarecemos as principais dúvidas sobre o BPC LOAS.
                 </p>
               </motion.div>
             </div>
 
             <Suspense fallback={<div className="min-h-[300px] flex items-center justify-center">Carregando dúvidas frequentes...</div>}>
-              <div className="max-w-3xl mx-auto">
+              <div className="max-w-3xl mx-auto px-4">
                 <FAQItem 
                   question="Tenho direito ao BPC LOAS?"
                   answer="O BPC LOAS é destinado a idosos com 65 anos ou mais e pessoas com deficiência de qualquer idade, desde que comprovem baixa renda familiar (igual ou inferior a 1/4 do salário mínimo por pessoa) e, no caso de deficiência, que esta impossibilite a participação plena na sociedade."
@@ -591,7 +591,7 @@ const Index = () => {
               </div>
             </Suspense>
 
-            <div className="mt-12 text-center">
+            <div className="mt-12 text-center px-4">
               <p className="text-gray-600 mb-6">
                 Tem outras dúvidas que não foram respondidas aqui?
               </p>
@@ -602,14 +602,14 @@ const Index = () => {
 
         {/* CTA Final - adicionar selo de segurança e contador de vagas */}
         <section className="py-20 bg-gms-brown text-white overflow-hidden">
-          <div className="gms-container px-4 sm:px-6">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="w-full max-w-full overflow-hidden">
+            <div className="grid lg:grid-cols-2 gap-8 items-start">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="w-full"
+                className="w-full px-4"
               >
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
                   Não perca a oportunidade de garantir seu direito ao BPC LOAS
@@ -658,15 +658,15 @@ const Index = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="w-full"
+                className="w-full flex justify-center"
               >
-                <div className="relative">
+                <div className="w-full max-w-[95%] sm:max-w-md relative">
                   {/* Indicador de vagas limitadas centralizado acima do formulário */}
                   <div className="absolute -top-4 left-0 right-0 mx-auto w-max bg-red-600 text-white px-4 py-1.5 rounded-full font-bold text-sm shadow-lg animate-pulse z-10">
                     Restam apenas {vagasRestantes} vagas!
                   </div>
                   
-                  <LeadForm className="max-w-full w-full" />
+                  <LeadForm className="w-full" />
                   
                   {/* Selo de segurança centralizado abaixo do formulário */}
                   <div className="absolute -bottom-4 left-0 right-0 mx-auto w-max bg-white/90 text-gms-brown px-4 py-1.5 rounded-md text-xs flex items-center gap-1 shadow-md">
