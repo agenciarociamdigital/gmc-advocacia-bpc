@@ -1,14 +1,15 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, lazy, Suspense } from "react";
 import { motion } from "framer-motion";
 import { MessageSquare, Users, Scroll, Calendar, ClipboardList, ArrowRight, Award, Clock, Check, UserCheck, HelpCircle, Briefcase, User, UserPlus, ShieldCheck } from "lucide-react";
 
 // Components
 import Logo from "@/components/Logo";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import EligibilityCard from "@/components/EligibilityCard";
-import ProcessStep from "@/components/ProcessStep";
-import TestimonialCard from "@/components/TestimonialCard";
-import FAQItem from "@/components/FAQItem";
+// Lazy load non-critical components
+const EligibilityCard = lazy(() => import("@/components/EligibilityCard"));
+const ProcessStep = lazy(() => import("@/components/ProcessStep"));
+const TestimonialCard = lazy(() => import("@/components/TestimonialCard"));
+const FAQItem = lazy(() => import("@/components/FAQItem"));
 import LeadForm from "@/components/LeadForm";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import BackToTop from "@/components/BackToTop";
@@ -98,29 +99,32 @@ const Index = () => {
       <div className="pt-12">
         {showFloatingWhatsApp && <FloatingWhatsApp />}
         
-        {/* Hero Section */}
+        {/* Hero Section - optimized */}
         <section className="relative bg-gms-brown text-white">
           <div 
             className="absolute inset-0 opacity-10 bg-cover bg-center"
             style={{ 
               backgroundImage: `url(/lovable-uploads/4667764a-da47-4493-820a-4b2a867779a5.png)`, 
               backgroundBlendMode: 'overlay',
-              filter: 'grayscale(50%)' 
+              filter: 'grayscale(50%)',
+              // Add background color for better LCP before image loads
+              backgroundColor: '#3c2a20' 
             }}
+            aria-hidden="true"
           />
-          <div className="gms-container relative z-10 py-20 md:py-32">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-12">
-              <div className="max-w-3xl">
+          <div className="gms-container relative z-10 py-12 md:py-16 lg:py-20">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+              <div className="max-w-2xl">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <div className="flex justify-center md:justify-start mb-6">
+                  <div className="flex justify-center md:justify-start mb-4">
                     <Logo />
                   </div>
-                  <div className="relative mb-4">
-                    <div className="inline-block bg-gms-gold/10 px-4 py-2 rounded-sm border-l-4 border-gms-gold">
+                  <div className="relative mb-3">
+                    <div className="inline-block bg-gms-gold/10 px-3 py-1.5 rounded-sm border-l-4 border-gms-gold">
                       <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -135,15 +139,15 @@ const Index = () => {
                       </motion.div>
                     </div>
                   </div>
-                  <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
+                  <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4">
                     <span className="block md:inline">Você Pode Ter Direito A </span>
                     <span className="text-gms-gold whitespace-nowrap">R$ 1.518,00 Mensais</span>
                     <span className="block md:inline"> Do Governo.</span>
                   </h1>
-                  <p className="text-xl md:text-2xl mb-8 opacity-80">
-                    Idosos acima de 650 anos ou pessoas com deficiência de baixa renda podem ter direito ao BPC LOAS. Descubra agora se você é elegível.
+                  <p className="text-lg md:text-xl lg:text-2xl mb-5 opacity-80">
+                    Idosos acima de 65 anos ou pessoas com deficiência de baixa renda podem ter direito ao BPC LOAS. Descubra se você é elegível.
                   </p>
-                  <div className="flex flex-col sm:flex-row gap-4">
+                  <div className="flex flex-col sm:flex-row gap-3">
                     <WhatsAppButton text="Avalie Seu Caso Gratuitamente" />
                     <a 
                       href="#quem-tem-direito" 
@@ -168,7 +172,7 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Quem tem direito */}
+        {/* Quem tem direito - Add Suspense for lazy loading */}
         <section ref={quemTemDireitoRef} id="quem-tem-direito" className="py-20 bg-white">
           <div className="gms-container">
             <div className="text-center max-w-3xl mx-auto mb-16">
@@ -188,18 +192,20 @@ const Index = () => {
               </motion.div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8 mb-16">
-              <EligibilityCard 
-                title="Idosos com 65 anos ou mais"
-                description="Pessoas com 65 anos ou mais que comprovem não possuir meios de prover a própria manutenção nem tê-la provida por sua família."
-                icon={<User className="h-8 w-8" />}
-              />
-              <EligibilityCard 
-                title="Pessoas com Deficiência"
-                description="Pessoas com impedimentos de longo prazo de natureza física, mental, intelectual ou sensorial que limitam sua participação efetiva na sociedade."
-                icon={<UserPlus className="h-8 w-8" />}
-              />
-            </div>
+            <Suspense fallback={<div className="min-h-[200px] flex items-center justify-center">Carregando...</div>}>
+              <div className="grid md:grid-cols-2 gap-8 mb-16">
+                <EligibilityCard 
+                  title="Idosos com 65 anos ou mais"
+                  description="Pessoas com 65 anos ou mais que comprovem não possuir meios de prover a própria manutenção nem tê-la provida por sua família."
+                  icon={<User className="h-8 w-8" />}
+                />
+                <EligibilityCard 
+                  title="Pessoas com Deficiência"
+                  description="Pessoas com impedimentos de longo prazo de natureza física, mental, intelectual ou sensorial que limitam sua participação efetiva na sociedade."
+                  icon={<UserPlus className="h-8 w-8" />}
+                />
+              </div>
+            </Suspense>
 
             <motion.div
               className="bg-gms-brown/5 rounded-lg p-8 border-l-4 border-gms-gold text-center max-w-3xl mx-auto"
@@ -221,6 +227,7 @@ const Index = () => {
           </div>
         </section>
 
+        {/* Rest of the sections - Add Suspense for lazy-loaded components */}
         {/* Por que nos escolher */}
         <section className="py-20 bg-gms-brown text-white">
           <div className="gms-container">
@@ -291,6 +298,9 @@ const Index = () => {
                     src="/lovable-uploads/1b8f1c9c-786f-4333-aa31-a715dae06d62.png" 
                     alt="Equipe GMS Advocacia" 
                     className="w-20 h-20 rounded-full object-cover border-2 border-gms-gold"
+                    loading="lazy"
+                    width="80"
+                    height="80"
                   />
                 </div>
                 <p className="mt-4 font-serif text-lg">Equipe GMS Advocacia</p>
@@ -320,39 +330,41 @@ const Index = () => {
               </motion.div>
             </div>
 
-            <div className="max-w-3xl mx-auto">
-              <ProcessStep 
-                number={1}
-                title="Avaliação Inicial"
-                description="Analisamos seu caso gratuitamente para verificar se você tem direito ao benefício."
-                icon={<ClipboardList className="h-6 w-6" />}
-              />
-              <ProcessStep 
-                number={2}
-                title="Coleta de Documentos"
-                description="Auxiliamos na reunião de todos os documentos necessários para o processo."
-                icon={<Scroll className="h-6 w-6" />}
-              />
-              <ProcessStep 
-                number={3}
-                title="Solicitação do Benefício"
-                description="Damos entrada no pedido junto ao INSS, preparando tudo conforme a legislação."
-                icon={<Check className="h-6 w-6" />}
-              />
-              <ProcessStep 
-                number={4}
-                title="Acompanhamento"
-                description="Monitoramos o andamento do processo e realizamos as intervenções necessárias."
-                icon={<Clock className="h-6 w-6" />}
-              />
-              <ProcessStep 
-                number={5}
-                title="Concessão do Benefício"
-                description="Após a aprovação, acompanhamos o início dos pagamentos para garantir que tudo corra bem."
-                icon={<Award className="h-6 w-6" />}
-                isLast
-              />
-            </div>
+            <Suspense fallback={<div className="min-h-[300px] flex items-center justify-center">Carregando processo...</div>}>
+              <div className="max-w-3xl mx-auto">
+                <ProcessStep 
+                  number={1}
+                  title="Avaliação Inicial"
+                  description="Analisamos seu caso gratuitamente para verificar se você tem direito ao benefício."
+                  icon={<ClipboardList className="h-6 w-6" />}
+                />
+                <ProcessStep 
+                  number={2}
+                  title="Coleta de Documentos"
+                  description="Auxiliamos na reunião de todos os documentos necessários para o processo."
+                  icon={<Scroll className="h-6 w-6" />}
+                />
+                <ProcessStep 
+                  number={3}
+                  title="Solicitação do Benefício"
+                  description="Damos entrada no pedido junto ao INSS, preparando tudo conforme a legislação."
+                  icon={<Check className="h-6 w-6" />}
+                />
+                <ProcessStep 
+                  number={4}
+                  title="Acompanhamento"
+                  description="Monitoramos o andamento do processo e realizamos as intervenções necessárias."
+                  icon={<Clock className="h-6 w-6" />}
+                />
+                <ProcessStep 
+                  number={5}
+                  title="Concessão do Benefício"
+                  description="Após a aprovação, acompanhamos o início dos pagamentos para garantir que tudo corra bem."
+                  icon={<Award className="h-6 w-6" />}
+                  isLast
+                />
+              </div>
+            </Suspense>
 
             <motion.div
               className="mt-12 text-center"
@@ -389,26 +401,28 @@ const Index = () => {
               </motion.div>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <TestimonialCard 
-                quote="A GMS Advocacia mudou minha vida. Eu não sabia que tinha direito ao BPC, e eles cuidaram de tudo. Agora recebo meu benefício mensalmente."
-                name="Maria Silva"
-                location="São Sebastião da Amoreira"
-                benefit="BPC LOAS Idoso"
-              />
-              <TestimonialCard 
-                quote="Meu filho tem autismo e precisávamos do benefício. Tentamos sozinhos e foi negado. Com a GMS, conseguimos em menos de um ano."
-                name="João Oliveira"
-                location="Cornélio Procópio"
-                benefit="BPC LOAS Deficiência"
-              />
-              <TestimonialCard 
-                quote="Profissionais competentes e atenciosos. Explicaram tudo com paciência e não cobraram nada até eu ganhar o processo."
-                name="Ana Paula Santos"
-                location="Nova América da Colina"
-                benefit="BPC LOAS Idoso"
-              />
-            </div>
+            <Suspense fallback={<div className="min-h-[300px] flex items-center justify-center">Carregando depoimentos...</div>}>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <TestimonialCard 
+                  quote="A GMS Advocacia mudou minha vida. Eu não sabia que tinha direito ao BPC, e eles cuidaram de tudo. Agora recebo meu benefício mensalmente."
+                  name="Maria Silva"
+                  location="São Sebastião da Amoreira"
+                  benefit="BPC LOAS Idoso"
+                />
+                <TestimonialCard 
+                  quote="Meu filho tem autismo e precisávamos do benefício. Tentamos sozinhos e foi negado. Com a GMS, conseguimos em menos de um ano."
+                  name="João Oliveira"
+                  location="Cornélio Procópio"
+                  benefit="BPC LOAS Deficiência"
+                />
+                <TestimonialCard 
+                  quote="Profissionais competentes e atenciosos. Explicaram tudo com paciência e não cobraram nada até eu ganhar o processo."
+                  name="Ana Paula Santos"
+                  location="Nova América da Colina"
+                  benefit="BPC LOAS Idoso"
+                />
+              </div>
+            </Suspense>
           </div>
         </section>
 
@@ -477,6 +491,9 @@ const Index = () => {
                     src="/lovable-uploads/29424d6c-1e60-40a4-b9bd-03be27565433.png" 
                     alt="Equipe GMS Advocacia" 
                     className="w-full h-80 object-cover"
+                    loading="lazy"
+                    width="600"
+                    height="320"
                   />
                   <div className="p-8">
                     <h3 className="text-2xl font-bold text-gms-brown mb-4">
@@ -516,32 +533,34 @@ const Index = () => {
               </motion.div>
             </div>
 
-            <div className="max-w-3xl mx-auto">
-              <FAQItem 
-                question="Tenho direito ao BPC LOAS?"
-                answer="O BPC LOAS é destinado a idosos com 65 anos ou mais e pessoas com deficiência de qualquer idade, desde que comprovem baixa renda familiar (igual ou inferior a 1/4 do salário mínimo por pessoa) e, no caso de deficiência, que esta impossibilite a participação plena na sociedade."
-              />
-              <FAQItem 
-                question="Quanto preciso ganhar para ter direito ao BPC?"
-                answer="A renda por pessoa do grupo familiar deve ser igual ou inferior a 1/4 do salário mínimo atual, o que equivale a aproximadamente R$ 379,50 por pessoa."
-              />
-              <FAQItem 
-                question="Posso acumular o BPC LOAS com outros benefícios?"
-                answer="Em regra, o BPC não pode ser acumulado com outros benefícios previdenciários. Há exceções como o recebimento conjunto com benefícios de assistência médica, pensões especiais de natureza indenizatória e remuneração de contrato de aprendizagem."
-              />
-              <FAQItem 
-                question="Quanto tempo demora o processo do BPC?"
-                answer="O tempo médio varia entre 9 e 18 meses, dependendo da complexidade do caso, da região e da necessidade ou não de judicialização do pedido."
-              />
-              <FAQItem 
-                question="Quais são os custos para dar entrada no BPC LOAS?"
-                answer="Em nosso escritório, você não paga nada adiantado. Cobramos honorários apenas em caso de êxito, quando você começar a receber o benefício. Os valores são negociados previamente e com total transparência."
-              />
-              <FAQItem 
-                question="Se eu for negado pelo INSS, posso recorrer?"
-                answer="Sim. Caso seu pedido seja negado administrativamente pelo INSS, é possível recorrer judicialmente. Nossa equipe está preparada para representá-lo em todas as instâncias necessárias."
-              />
-            </div>
+            <Suspense fallback={<div className="min-h-[300px] flex items-center justify-center">Carregando dúvidas frequentes...</div>}>
+              <div className="max-w-3xl mx-auto">
+                <FAQItem 
+                  question="Tenho direito ao BPC LOAS?"
+                  answer="O BPC LOAS é destinado a idosos com 65 anos ou mais e pessoas com deficiência de qualquer idade, desde que comprovem baixa renda familiar (igual ou inferior a 1/4 do salário mínimo por pessoa) e, no caso de deficiência, que esta impossibilite a participação plena na sociedade."
+                />
+                <FAQItem 
+                  question="Quanto preciso ganhar para ter direito ao BPC?"
+                  answer="A renda por pessoa do grupo familiar deve ser igual ou inferior a 1/4 do salário mínimo atual, o que equivale a aproximadamente R$ 379,50 por pessoa."
+                />
+                <FAQItem 
+                  question="Posso acumular o BPC LOAS com outros benefícios?"
+                  answer="Em regra, o BPC não pode ser acumulado com outros benefícios previdenciários. Há exceções como o recebimento conjunto com benefícios de assistência médica, pensões especiais de natureza indenizatória e remuneração de contrato de aprendizagem."
+                />
+                <FAQItem 
+                  question="Quanto tempo demora o processo do BPC?"
+                  answer="O tempo médio varia entre 9 e 18 meses, dependendo da complexidade do caso, da região e da necessidade ou não de judicialização do pedido."
+                />
+                <FAQItem 
+                  question="Quais são os custos para dar entrada no BPC LOAS?"
+                  answer="Em nosso escritório, você não paga nada adiantado. Cobramos honorários apenas em caso de êxito, quando você começar a receber o benefício. Os valores são negociados previamente e com total transparência."
+                />
+                <FAQItem 
+                  question="Se eu for negado pelo INSS, posso recorrer?"
+                  answer="Sim. Caso seu pedido seja negado administrativamente pelo INSS, é possível recorrer judicialmente. Nossa equipe está preparada para representá-lo em todas as instâncias necessárias."
+                />
+              </div>
+            </Suspense>
 
             <div className="mt-12 text-center">
               <p className="text-gray-600 mb-6">
