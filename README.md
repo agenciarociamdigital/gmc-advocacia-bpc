@@ -66,13 +66,54 @@ npm run dev
 
 ## What technologies are used for this project?
 
-This project is built with .
+This project is built with:
 
 - Vite
 - TypeScript
 - React
 - shadcn-ui
 - Tailwind CSS
+- HTML
+- CSS
+- JavaScript
+
+## Como enviar arquivos para o GitHub
+
+Para enviar seus arquivos para o GitHub, siga os passos abaixo:
+
+1. **Inicialize um repositório Git local (caso ainda não tenha feito):**
+   ```sh
+   git init
+   ```
+
+2. **Adicione o repositório remoto do GitHub:**
+   ```sh
+   git remote add origin https://github.com/seu-usuario/seu-repositorio.git
+   ```
+
+3. **Adicione todos os arquivos para serem monitorados pelo Git:**
+   ```sh
+   git add .
+   ```
+
+4. **Faça um commit com uma mensagem descritiva:**
+   ```sh
+   git commit -m "Commit inicial do projeto GMS Advocacia"
+   ```
+
+5. **Envie os arquivos para o GitHub:**
+   ```sh
+   git push -u origin main
+   ```
+   
+   *Nota: Se estiver usando uma branch diferente de 'main', substitua por 'master' ou pelo nome da sua branch.*
+
+6. **Para atualizações futuras, use:**
+   ```sh
+   git add .
+   git commit -m "Descrição das alterações"
+   git push
+   ```
 
 ## How can I deploy this project?
 
