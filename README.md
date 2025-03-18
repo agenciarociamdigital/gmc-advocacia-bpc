@@ -1,3 +1,17 @@
+# GMS Advocacia BPC
+
+Site institucional da GMS Advocacia especializada em BPC (Benefício de Prestação Continuada).
+
+## Sobre o Projeto
+
+Este projeto contém o código-fonte do site da GMS Advocacia, desenvolvido pela Agência Rociam Digital.
+
+## Tecnologias Utilizadas
+
+- HTML
+- CSS
+- JavaScript
+
 # Welcome to your Lovable project
 
 ## Project info
