@@ -439,7 +439,7 @@ const Index = () => {
               transition={{ duration: 0.5 }}
             >
               <p className="text-gray-600 mb-6">
-                O tempo médio para conclusão do processo varia entre 9 e 18 meses, dependendo da complexidade e da região.
+                O tempo médio para conclusão do processo varia entre 9 a 18 meses, dependendo da complexidade e da região.
               </p>
               <WhatsAppButton text="Inicie Seu Processo Agora" />
             </motion.div>
