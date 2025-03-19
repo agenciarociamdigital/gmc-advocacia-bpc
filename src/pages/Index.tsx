@@ -50,10 +50,7 @@ const Index = () => {
   
   // Updated array with only images from the public directory
   const officeImages = [
-    {
-      src: "/img1_equipe_bpcloas.jpeg",
-      alt: "Advogado GMS"
-    },
+    
     {
       src: "/img2_equipe_bpcloas.jpeg",
       alt: "Escritório GMS Advocacia"
