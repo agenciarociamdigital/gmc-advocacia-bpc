@@ -783,7 +783,7 @@ const Index = () => {
                   Localização: Avenida Alfredo Luiz Batista, nº 444, Centro, São Sebastião da Amoreira, Paraná
                 </p>
                 <p className="text-sm opacity-70 text-center max-w-lg">
-                  © 2025 GMS Advocacia - Gaspar, Marques & Souza. Todos os direitos reservados.
+                  © 2025 GMS Advocacia | OAB/PR nº 99.147 - Gaspar, Marques & Souza. Todos os direitos reservados.
                 </p>
               </div>
             </div>
