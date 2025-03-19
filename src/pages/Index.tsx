@@ -362,10 +362,10 @@ const Index = () => {
                   <img 
                     src="/lovable-uploads/1b8f1c9c-786f-4333-aa31-a715dae06d62.png" 
                     alt="Equipe GMS Advocacia" 
-                    className="w-32 h-32 rounded-full object-cover border-2 border-gms-gold"
+                    className="w-64 h-48 rounded-lg object-contain bg-white/10 border-2 border-gms-gold"
                     loading="lazy"
-                    width="128"
-                    height="128"
+                    width="256"
+                    height="192"
                   />
                 </div>
                 <p className="mt-4 font-serif text-lg">Equipe GMS Advocacia</p>
