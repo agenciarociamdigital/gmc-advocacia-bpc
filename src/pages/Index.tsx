@@ -257,13 +257,17 @@ const Index = () => {
               <div className="grid md:grid-cols-2 gap-8 mb-16">
                 <EligibilityCard 
                   title="Idosos com 65 anos ou mais"
-                  description="Pessoas com 65 anos ou mais que comprovem não possuir recursos financeiros para suas necessidades básicas."
+                  description="Pessoas com 65 anos ou mais que comprovem não possuir recursos financeiros para suas necessidades básicas."
                   icon={<User className="h-8 w-8" />}
+                  imageSrc="/idosos.png"
+                  imageAlt="Pessoa idosa elegível para BPC LOAS"
                 />
                 <EligibilityCard 
                   title="Pessoas com Deficiência"
-                  description="Pessoas com impedimentos de longo prazo de natureza física, mental, intelectual ou sensorial que não possuem recursos financeiros para custear suas necessidades básicas."
+                  description="Pessoas com impedimentos de longo prazo de natureza física, mental, intelectual ou sensorial que não possuem recursos financeiros para custear suas necessidades básicas."
                   icon={<UserPlus className="h-8 w-8" />}
+                  imageSrc="/person-with-disability.jpg"
+                  imageAlt="Pessoa com deficiência elegível para BPC LOAS"
                 />
               </div>
             </Suspense>
@@ -499,7 +503,7 @@ const Index = () => {
                 transition={{ duration: 0.5 }}
               >
                 <h2 className="text-3xl md:text-4xl font-bold text-gms-brown mb-4">
-                  Documentos necessários
+                  Documentos Necessários
                 </h2>
                 <div className="h-1 w-24 bg-gms-gold mb-6"></div>
                 <p className="text-lg text-gray-600 mb-6">
