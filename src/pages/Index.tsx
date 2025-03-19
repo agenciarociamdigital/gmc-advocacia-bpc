@@ -266,7 +266,7 @@ const Index = () => {
                   title="Pessoas com Deficiência"
                   description="Pessoas com impedimentos de longo prazo de natureza física, mental, intelectual ou sensorial que não possuem recursos financeiros para custear suas necessidades básicas."
                   icon={<UserPlus className="h-8 w-8" />}
-                  imageSrc="/person-with-disability.jpg"
+                  imageSrc="/deficientes.png"
                   imageAlt="Pessoa com deficiência elegível para BPC LOAS"
                 />
               </div>

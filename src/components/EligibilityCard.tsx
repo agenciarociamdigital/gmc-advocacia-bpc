@@ -6,8 +6,8 @@ interface EligibilityCardProps {
   title: string;
   description: string;
   icon: ReactNode;
-  imageSrc?: string; // Optional image source
-  imageAlt?: string; // Optional image alt text
+  imageSrc: string;
+  imageAlt: string;
   className?: string;
 }
 
@@ -30,24 +30,24 @@ const EligibilityCard = ({
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
     >
-      <div className="flex flex-col items-center text-center">
-        <div className="text-gms-gold mb-4 p-4 bg-gms-brown rounded-full">
-          {icon}
-        </div>
-        <h3 className="text-xl font-bold mb-2 text-gms-brown">{title}</h3>
-        <p className="text-gray-600">{description}</p>
-        
-        {/* Image container with centering and appropriate sizing */}
-        {imageSrc && (
-          <div className="mt-auto flex justify-center">
-            <img 
-              src={imageSrc} 
-              alt={imageAlt || title} 
-              className="rounded-lg object-cover w-full max-w-[200px] h-auto shadow-md"
-              loading="lazy"
-            />
+      <div className="relative h-60 sm:h-72 md:h-80 lg:h-96 overflow-hidden">
+        <img 
+          src={imageSrc} 
+          alt={imageAlt} 
+          className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+          loading="lazy"
+        />
+        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/30 to-transparent"></div>
+      </div>
+      
+      <div className="p-6 bg-white">
+        <div className="flex items-center mb-4">
+          <div className="mr-3 text-gms-gold bg-gms-gold/10 p-2 rounded-md">
+            {icon}
           </div>
-        )}
+          <h3 className="text-xl font-bold text-gms-brown">{title}</h3>
+        </div>
+        <p className="text-gray-600">{description}</p>
       </div>
     </motion.div>
   );
