@@ -37,7 +37,7 @@ const LeadForm = ({ className }: LeadFormProps) => {
     setPhone(applyPhoneMask(value));
   };
 
-  const handleSubmit = (e?: React.FormEvent) => {
+  const handleSubmit = async (e?: React.FormEvent) => {
     if (e) e.preventDefault();
     
     // Normally would send this data to a backend
@@ -45,6 +45,31 @@ const LeadForm = ({ className }: LeadFormProps) => {
     
     // Here we'll simulate a successful submission
     setSubmitted(true);
+    
+    // Send data to CRM webhook
+    try {
+      const webhookUrl = "https://services.leadconnectorhq.com/hooks/OENr4Dm8dvAwqM3OCwUk/webhook-trigger/c088f6b6-6ca5-428c-b72a-f2935008a86f";
+      
+      const response = await fetch(webhookUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name,
+          phone: phone.replace(/\D/g, ""), // Send phone without formatting
+          clientType: clientType === 'elderly' ? 'Idoso (65+ anos)' : 'Pessoa com Deficiência'
+        })
+      });
+      
+      if (response.ok) {
+        console.log("Lead data successfully sent to CRM");
+      } else {
+        console.error("Failed to send lead data to CRM:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Error sending lead data to CRM:", error);
+    }
     
     // Redirect to WhatsApp with standardized message
     setTimeout(() => {
