@@ -204,7 +204,7 @@ const Index = () => {
                       href="#quem-tem-direito" 
                       className="primary-button border border-white/20 bg-transparent hover:bg-white/10 flex items-center justify-center gap-2 w-full sm:w-auto py-3 px-6 text-base font-medium"
                     >
-                      Descubra Se Você Tem Direito
+                      Descubra Se Você Se Enquadra
                       <ArrowRight className="h-5 w-5" />
                     </a>
                   </div>
@@ -260,7 +260,7 @@ const Index = () => {
               <div className="grid md:grid-cols-2 gap-8 mb-16">
                 <EligibilityCard 
                   title="Idosos com 65 anos ou mais"
-                  description="Pessoas com 65 anos ou mais que comprovem não possuir meios de prover a própria manutenção nem tê-la provida por sua família."
+                  description="Pessoas com 65 anos ou mais que comprovem não possuir recursos financeiros para suas necessidades básicas."
                   icon={<User className="h-8 w-8" />}
                 />
                 <EligibilityCard 
@@ -282,7 +282,7 @@ const Index = () => {
                 Critério de Renda
               </h3>
               <p className="text-gray-700 mb-4">
-                Para ter direito ao BPC LOAS, a renda por pessoa do grupo familiar deve ser igual ou inferior a 1/4 do salário mínimo atual, o que equivale a aproximadamente R$ 379,50 por pessoa.
+                Para ter direito ao BPC LOAS, a renda por pessoa do grupo familiar deve ser igual ou inferior a 1/4 do salário mínimo atual, o que equivale a aproximadamente R$ 379,50 por pessoa, mas existem exceções.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mt-6 justify-center">
                 <WhatsAppButton text="Verifique Se Você Tem Direito" />
@@ -337,13 +337,13 @@ const Index = () => {
               ].map((item, index) => (
                 <motion.div 
                   key={index}
-                  className="bg-white/5 p-6 rounded-lg border border-white/10 backdrop-blur-sm text-center md:text-left transition-all duration-300 hover:scale-105 hover:bg-white/10 hover:shadow-lg hover:shadow-gms-gold/20 hover:border-gms-gold/30"
+                  className="bg-white/5 p-6 rounded-lg border border-white/10 backdrop-blur-sm text-center transition-all duration-300 hover:scale-105 hover:bg-white/10 hover:shadow-lg hover:shadow-gms-gold/20 hover:border-gms-gold/30"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <div className="text-gms-gold mb-4 flex justify-center md:justify-start">
+                  <div className="text-gms-gold mb-4 flex justify-center">
                     {item.icon}
                   </div>
                   <h3 className="text-xl font-bold mb-2">{item.title}</h3>
@@ -355,7 +355,7 @@ const Index = () => {
             <div className="flex justify-center mt-12">
               <div className="max-w-2xl text-center">
                 <p className="text-lg italic opacity-80 mb-6">
-                  "Nosso escritório é especializado em BPC LOAS. Avaliamos seu caso gratuitamente e você só paga se conquistarmos seu benefício."
+                  "Nosso escritório é especializado em BPC/LOAS. A avaliação é gratuita e os serviços só serão cobrados em caso de aprovação do benefício."
                 </p>
                 <div className="flex justify-center">
                   <img 
@@ -410,20 +410,20 @@ const Index = () => {
                 />
                 <ProcessStep 
                   number={3}
-                  title="Solicitação do Benefício"
+                  title="Ingressamos com o pedido junto ao INSS"
                   description="Damos entrada no pedido junto ao INSS, preparando tudo conforme a legislação."
                   icon={<Check className="h-6 w-6" />}
                 />
                 <ProcessStep 
                   number={4}
-                  title="Acompanhamento"
-                  description="Monitoramos o andamento do processo e realizamos as intervenções necessárias."
+                  title="Acompanhamento: "
+                  description="Realizamos as intervenções e orientações necessárias."
                   icon={<Clock className="h-6 w-6" />}
                 />
                 <ProcessStep 
                   number={5}
-                  title="Concessão do Benefício"
-                  description="Após a aprovação, acompanhamos o início dos pagamentos para garantir que tudo corra bem."
+                  title="Ação na Justiça Federal:"
+                  description="Se necessário, nossa equipe é preparada para ingressar com ação na Justiça em busca da concessão do seu benefício."
                   icon={<Award className="h-6 w-6" />}
                   isLast
                 />
@@ -511,12 +511,11 @@ const Index = () => {
                 
                 <ul className="space-y-3 mb-8">
                   {[
-                    "Documento de identificação com foto (RG, CNH)",
-                    "CPF do requerente e de todos os membros da família",
-                    "Comprovante de residência atual",
-                    "Carteira de trabalho (mesmo que não tenha registro)",
-                    "Comprovantes de renda de todos os membros da família",
-                    "Para deficientes: laudos e exames médicos que comprovem a condição"
+                    "Documentos de identificação (RG, CPF, CNH);",
+                    "Comprovante de residência atual;",
+                    "Comprovante de Endereço;",
+                    "Cadastro Único Atualizado (com todos os membros da família);",
+                    
                   ].map((item, index) => (
                     <motion.li 
                       key={index}
@@ -607,11 +606,11 @@ const Index = () => {
                       Conte com nossa experiência
                     </h3>
                     <p className="text-gray-600 mb-4">
-                      Nosso escritório tem mais de 2 anos de experiência em Direito Previdenciário, com foco especial em BPC LOAS.
+                      Nosso escritório tem mais de 2 anos de experiência em Direito Previdenciário, com foco especialmente em BPC/LOAS.
                     </p>
                     <div className="flex items-center gap-3 text-sm text-gray-500">
                       <UserCheck className="h-5 w-5 text-gms-gold" />
-                      <span>Atendimento humano e personalizado</span>
+                      <span>Atendimento humanizado e personalizado.</span>
                     </div>
                   </div>
                 </div>
@@ -643,20 +642,20 @@ const Index = () => {
             <Suspense fallback={<div className="min-h-[300px] flex items-center justify-center">Carregando dúvidas frequentes...</div>}>
               <div className="max-w-3xl mx-auto px-4">
                 <FAQItem 
-                  question="Tenho direito ao BPC LOAS?"
-                  answer="O BPC LOAS é destinado a idosos com 65 anos ou mais e pessoas com deficiência de qualquer idade, desde que comprovem baixa renda familiar (igual ou inferior a 1/4 do salário mínimo por pessoa) e, no caso de deficiência, que esta impossibilite a participação plena na sociedade."
+                  question="Tenho direito ao BPC/LOAS?"
+                  answer="O BPC LOAS é destinado a idosos com 65 anos ou mais e pessoas com deficiência de qualquer idade, desde que comprovem baixa renda familiar."
                 />
                 <FAQItem 
                   question="Quanto preciso ganhar para ter direito ao BPC?"
-                  answer="A renda por pessoa do grupo familiar deve ser igual ou inferior a 1/4 do salário mínimo atual, o que equivale a aproximadamente R$ 379,50 por pessoa."
+                  answer="A renda por pessoa do grupo familiar deve ser igual ou inferior a 1/4 do salário mínimo atual, o que equivale a aproximadamente R$ 379,50 por pessoas, porém, existem exceções que poderão ser analisadas na avaliação."
                 />
                 <FAQItem 
-                  question="Posso acumular o BPC LOAS com outros benefícios?"
-                  answer="Em regra, o BPC não pode ser acumulado com outros benefícios previdenciários. Há exceções como o recebimento conjunto com benefícios de assistência médica, pensões especiais de natureza indenizatória e remuneração de contrato de aprendizagem."
+                  question="Posso acumular o BPC/LOAS com outros benefícios?"
+                  answer="Em regra, o BPC não pode ser acumulado com outros benefícios previdenciários. porém, existem exceções que poderão ser analisadas na avaliação."
                 />
                 <FAQItem 
                   question="Quanto tempo demora o processo do BPC?"
-                  answer="O tempo médio varia entre 9 e 18 meses, dependendo da complexidade do caso, da região e da necessidade ou não de judicialização do pedido."
+                  answer="O tempo médio varia entre 9 a 18 meses, dependendo da complexidade do caso, da região e da necessidade ou não de judicialização do pedido."
                 />
                 <FAQItem 
                   question="Quais são os custos para dar entrada no BPC LOAS?"
@@ -701,7 +700,7 @@ const Index = () => {
                       <HelpCircle className="h-5 w-5 text-gms-gold" />
                     </div>
                     <p className="ml-3 opacity-80 text-sm sm:text-base">
-                      <strong className="text-gms-gold">Sem compromisso:</strong> Avaliamos seu caso sem nenhuma obrigação.
+                      <strong className="text-gms-gold">Sem compromisso:</strong> Avaliamos seu caso sem a obrigação de nos contratar.
                     </p>
                   </div>
                   <div className="flex items-start">
@@ -780,10 +779,10 @@ const Index = () => {
                   </a>
                 </div>
                 <p className="text-sm opacity-70 text-center mb-2">
-                  Localização: Avenida Alfredo Luiz Batista, nº 444, Centro, São Sebastião da Amoreira, Paraná
+                  Localização: Rua Prefeito Alfredo Luiz Batista, nº 444, Centro, São Sebastião da Amoreira, Paraná
                 </p>
                 <p className="text-sm opacity-70 text-center max-w-lg">
-                  © 2025 GMS Advocacia | OAB/PR nº 99.147 - Gaspar, Marques & Souza. Todos os direitos reservados.
+                  © 2025 GMS Advocacia - Gaspar, Marques & Souza. Todos os direitos reservados.
                 </p>
               </div>
             </div>
