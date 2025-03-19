@@ -86,7 +86,7 @@ const Index = () => {
     document.head.appendChild(styleElement);
 
     // Set page title
-    document.title = "BPC LOAS | GMS Advocacia - Gaspar, Marques & Souza";
+    document.title = "BPC/LOAS | GMS Advocacia - Gaspar, Marques & Souza";
 
     // Function to check if section is visible or has been scrolled past
     const handleScroll = () => {
@@ -171,7 +171,7 @@ const Index = () => {
                       >
                         <span className="h-2 w-2 rounded-full bg-gms-gold mr-2"></span>
                         <span className="text-gms-gold font-semibold tracking-wider uppercase text-sm">
-                          Benefício BPC LOAS
+                          Benefício BPC/LOAS
                         </span>
                         <span className="h-2 w-2 rounded-full bg-gms-gold ml-2"></span>
                       </motion.div>
@@ -184,7 +184,7 @@ const Index = () => {
                     <span className="block md:inline"> Do Governo.</span>
                   </h1>
                   <p className="text-lg md:text-xl lg:text-2xl mb-5 opacity-80 text-center md:text-left">
-                    Idosos acima de 65 anos ou pessoas com deficiência de baixa renda podem ter direito ao BPC LOAS. Descubra se você é elegível.
+                    Idosos acima de 65 anos ou pessoas com deficiência de baixa renda podem ter direito ao BPC/LOAS. Descubra se você é elegível.
                   </p>
                   
                   {/* Adicionar banner de pagamento apenas ao conseguir o benefício */}
@@ -244,7 +244,7 @@ const Index = () => {
                 transition={{ duration: 0.5 }}
               >
                 <h2 className="text-3xl md:text-4xl font-bold text-gms-brown mb-4">
-                  Quem tem direito ao BPC LOAS?
+                  Quem tem direito ao BPC/LOAS?
                 </h2>
                 <div className="h-1 w-24 bg-gms-gold mx-auto mb-6"></div>
                 <p className="text-lg text-gray-600">
@@ -260,14 +260,14 @@ const Index = () => {
                   description="Pessoas com 65 anos ou mais que comprovem não possuir recursos financeiros para suas necessidades básicas."
                   icon={<User className="h-8 w-8" />}
                   imageSrc="/idosos.png"
-                  imageAlt="Pessoa idosa elegível para BPC LOAS"
+                  imageAlt="Pessoa idosa elegível para BPC/LOAS"
                 />
                 <EligibilityCard 
                   title="Pessoas com Deficiência"
                   description="Pessoas com impedimentos de longo prazo de natureza física, mental, intelectual ou sensorial que não possuem recursos financeiros para custear suas necessidades básicas."
                   icon={<UserPlus className="h-8 w-8" />}
                   imageSrc="/deficientes.png"
-                  imageAlt="Pessoa com deficiência elegível para BPC LOAS"
+                  imageAlt="Pessoa com deficiência elegível para BPC/LOAS"
                 />
               </div>
             </Suspense>
@@ -283,7 +283,7 @@ const Index = () => {
                 Critério de Renda
               </h3>
               <p className="text-gray-700 mb-4">
-                Para ter direito ao BPC LOAS, a renda por pessoa do grupo familiar deve ser igual ou inferior a 1/4 do salário mínimo atual, o que equivale a aproximadamente R$ 379,50 por pessoa, mas existem exceções.
+                Para ter direito ao BPC/LOAS, a renda por pessoa do grupo familiar deve ser igual ou inferior a 1/4 do salário mínimo atual, o que equivale a aproximadamente R$ 379,50 por pessoa, mas existem exceções.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mt-6 justify-center">
                 <WhatsAppButton text="Verifique Se Você Tem Direito" />
@@ -308,7 +308,7 @@ const Index = () => {
                 </h2>
                 <div className="h-1 w-24 bg-gms-gold mx-auto mb-6"></div>
                 <p className="text-lg opacity-80">
-                  Somos especialistas em Direito Previdenciário, com foco especial em benefícios BPC LOAS.
+                  Somos especialistas em Direito Previdenciário, com foco especial em benefícios BPC/LOAS.
                 </p>
               </motion.div>
             </div>
@@ -318,7 +318,7 @@ const Index = () => {
                 {
                   icon: <Award className="h-10 w-10" />,
                   title: "95% de Sucesso",
-                  description: "Alta taxa de aprovação em processos de BPC LOAS."
+                  description: "Alta taxa de aprovação em processos de BPC/LOAS."
                 },
                 {
                   icon: <Users className="h-10 w-10" />,
@@ -472,19 +472,19 @@ const Index = () => {
                   quote="A GMS Advocacia mudou minha vida. Eu não sabia que tinha direito ao BPC, e eles cuidaram de tudo. Agora recebo meu benefício mensalmente."
                   name="Maria Silva"
                   location="São Sebastião da Amoreira"
-                  benefit="BPC LOAS Idoso"
+                  benefit="BPC/LOAS Idoso"
                 />
                 <TestimonialCard 
                   quote="Meu filho tem autismo e precisávamos do benefício. Tentamos sozinhos e foi negado. Com a GMS, conseguimos em menos de um ano."
                   name="João Oliveira"
                   location="Cornélio Procópio"
-                  benefit="BPC LOAS Deficiência"
+                  benefit="BPC/LOAS Deficiência"
                 />
                 <TestimonialCard 
                   quote="Profissionais competentes e atenciosos. Explicaram tudo com paciência e não cobraram nada até eu ganhar o processo."
                   name="Ana Paula Santos"
                   location="Nova América da Colina"
-                  benefit="BPC LOAS Idoso"
+                  benefit="BPC/LOAS Idoso"
                 />
               </div>
             </Suspense>
@@ -507,7 +507,7 @@ const Index = () => {
                 </h2>
                 <div className="h-1 w-24 bg-gms-gold mb-6"></div>
                 <p className="text-lg text-gray-600 mb-6">
-                  Para dar entrada no BPC LOAS, você precisará dos seguintes documentos:
+                  Para dar entrada no BPC/LOAS, você precisará dos seguintes documentos:
                 </p>
                 
                 <ul className="space-y-3 mb-8">
@@ -635,7 +635,7 @@ const Index = () => {
                 </h2>
                 <div className="h-1 w-24 bg-gms-gold mx-auto mb-6"></div>
                 <p className="text-lg text-gray-600 px-4">
-                  Esclarecemos as principais dúvidas sobre o BPC LOAS.
+                  Esclarecemos as principais dúvidas sobre o BPC/LOAS.
                 </p>
               </motion.div>
             </div>
@@ -644,22 +644,22 @@ const Index = () => {
               <div className="max-w-3xl mx-auto px-4">
                 <FAQItem 
                   question="Tenho direito ao BPC/LOAS?"
-                  answer="O BPC LOAS é destinado a idosos com 65 anos ou mais e pessoas com deficiência de qualquer idade, desde que comprovem baixa renda familiar."
+                  answer="O BPC/LOAS é destinado a idosos com 65 anos ou mais e pessoas com deficiência de qualquer idade, desde que comprovem baixa renda familiar."
                 />
                 <FAQItem 
                   question="Quanto preciso ganhar para ter direito ao BPC?"
-                  answer="A renda por pessoa do grupo familiar deve ser igual ou inferior a 1/4 do salário mínimo atual, o que equivale a aproximadamente R$ 379,50 por pessoas, porém, existem exceções que poderão ser analisadas na avaliação."
+                  answer="A renda por pessoa do grupo familiar deve ser igual ou inferior a 1/4 do salário mínimo atual, o que equivale a aproximadamente R$ 379,50 por pessoas, porém, existem exceções que poderão ser analisadas na avaliação."
                 />
                 <FAQItem 
                   question="Posso acumular o BPC/LOAS com outros benefícios?"
-                  answer="Em regra, o BPC não pode ser acumulado com outros benefícios previdenciários. porém, existem exceções que poderão ser analisadas na avaliação."
+                  answer="Em regra, o BPC não pode ser acumulado com outros benefícios previdenciários. porém, existem exceções que poderão ser analisadas na avaliação."
                 />
                 <FAQItem 
                   question="Quanto tempo demora o processo do BPC?"
                   answer="O tempo médio varia entre 9 a 18 meses, dependendo da complexidade do caso, da região e da necessidade ou não de judicialização do pedido."
                 />
                 <FAQItem 
-                  question="Quais são os custos para dar entrada no BPC LOAS?"
+                  question="Quais são os custos para dar entrada no BPC/LOAS?"
                   answer="Em nosso escritório, você não paga nada adiantado. Cobramos honorários apenas em caso de êxito, quando você começar a receber o benefício. Os valores são negociados previamente e com total transparência."
                 />
                 <FAQItem 
@@ -690,7 +690,7 @@ const Index = () => {
                 className="w-full"
               >
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
-                  Não perca a oportunidade de garantir seu direito ao BPC LOAS
+                  Não perca a oportunidade de garantir seu direito ao BPC/LOAS
                 </h2>
                 <p className="text-lg sm:text-xl opacity-80 mb-6">
                   Preencha o formulário e receba uma avaliação gratuita do seu caso. Nossos especialistas estão prontos para ajudar.
@@ -763,7 +763,10 @@ const Index = () => {
         <footer className="bg-gms-brown text-white pt-8 border-t border-white/10 overflow-hidden">
           <div className="gms-container px-4 sm:px-6">
             <div className="flex flex-col items-center mb-8">
-              <Logo />
+              {/* Logo container with explicit centering */}
+              <div className="w-48 md:w-64 mx-auto flex justify-center transform hover:scale-105 transition-transform duration-300">
+                <Logo />
+              </div>
               <div className="mt-6 flex flex-col items-center">
                 <div className="flex space-x-4 mb-3">
                   <a href="https://www.instagram.com/advocacia.gaspar.marques.souza/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gms-gold transition-colors">
