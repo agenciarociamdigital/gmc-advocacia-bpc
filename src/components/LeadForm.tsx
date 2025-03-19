@@ -1,8 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 import WhatsAppButton from "./WhatsAppButton";
 import { cn } from "@/lib/utils";
 import { CheckIcon } from "lucide-react";
+
+// Debounce utility function to limit webhook calls
+const debounce = (func: Function, delay: number) => {
+  let timeoutId: NodeJS.Timeout;
+  return (...args: any[]) => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      func(...args);
+    }, delay);
+  };
+};
 
 interface LeadFormProps {
   className?: string;
@@ -13,6 +24,52 @@ const LeadForm = ({ className }: LeadFormProps) => {
   const [phone, setPhone] = useState("");
   const [clientType, setClientType] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  
+  // Webhook URL
+  const webhookUrl = "https://services.leadconnectorhq.com/hooks/OENr4Dm8dvAwqM3OCwUk/webhook-trigger/c088f6b6-6ca5-428c-b72a-f2935008a86f";
+
+  // Function to send data to CRM webhook
+  const sendToCRM = useCallback(async (formData: { name: string, phone: string, clientType: string }) => {
+    if (!formData.name && !formData.phone) return; // Don't send if both are empty
+    
+    try {
+      const response = await fetch(webhookUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone.replace(/\D/g, ""),
+          clientType: formData.clientType === 'elderly' ? 'Idoso (65+ anos)' : 
+                    formData.clientType === 'disabled' ? 'Pessoa com Deficiência' : '',
+          formStatus: 'in_progress' // Flag to indicate real-time update
+        })
+      });
+      
+      if (response.ok) {
+        console.log("Real-time data sent to CRM");
+      } else {
+        console.error("Failed to send real-time data to CRM:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Error sending real-time data to CRM:", error);
+    }
+  }, [webhookUrl]);
+  
+  // Create debounced version of the sendToCRM function (500ms delay)
+  const debouncedSendToCRM = useCallback(debounce(sendToCRM, 500), [sendToCRM]);
+  
+  // Effect to track changes in form fields and send data to CRM
+  useEffect(() => {
+    if (submitted) return; // Don't send real-time updates after form is submitted
+    
+    debouncedSendToCRM({
+      name,
+      phone,
+      clientType
+    });
+  }, [name, phone, clientType, debouncedSendToCRM, submitted]);
 
   // Phone mask function to format: (DDD) 9XXXX-XXXX
   const applyPhoneMask = (value: string) => {
@@ -46,10 +103,8 @@ const LeadForm = ({ className }: LeadFormProps) => {
     // Here we'll simulate a successful submission
     setSubmitted(true);
     
-    // Send data to CRM webhook
+    // Send data to CRM webhook with completed status
     try {
-      const webhookUrl = "https://services.leadconnectorhq.com/hooks/OENr4Dm8dvAwqM3OCwUk/webhook-trigger/c088f6b6-6ca5-428c-b72a-f2935008a86f";
-      
       const response = await fetch(webhookUrl, {
         method: 'POST',
         headers: {
@@ -58,7 +113,8 @@ const LeadForm = ({ className }: LeadFormProps) => {
         body: JSON.stringify({
           name,
           phone: phone.replace(/\D/g, ""), // Send phone without formatting
-          clientType: clientType === 'elderly' ? 'Idoso (65+ anos)' : 'Pessoa com Deficiência'
+          clientType: clientType === 'elderly' ? 'Idoso (65+ anos)' : 'Pessoa com Deficiência',
+          formStatus: 'completed' // Flag to indicate final submission
         })
       });
       
