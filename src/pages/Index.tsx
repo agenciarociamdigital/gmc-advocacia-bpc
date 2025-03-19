@@ -265,7 +265,7 @@ const Index = () => {
                 />
                 <EligibilityCard 
                   title="Pessoas com Deficiência"
-                  description="Pessoas com impedimentos de longo prazo de natureza física, mental, intelectual ou sensorial que limitam sua participação efetiva na sociedade."
+                  description="Pessoas com impedimentos de longo prazo de natureza física, mental, intelectual ou sensorial que não possuem recursos financeiros para custear suas necessidades básicas."
                   icon={<UserPlus className="h-8 w-8" />}
                 />
               </div>
