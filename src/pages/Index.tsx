@@ -304,13 +304,8 @@ const Index = () => {
               </motion.div>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid md:grid-cols-3 gap-8">
               {[
-                {
-                  icon: <Award className="h-10 w-10" />,
-                  title: "95% de Sucesso",
-                  description: "Alta taxa de aprovação em processos de BPC/LOAS."
-                },
                 {
                   icon: <Users className="h-10 w-10" />,
                   title: "Atendimento Personalizado",
@@ -687,39 +682,31 @@ const Index = () => {
                   Preencha o formulário e receba uma avaliação gratuita do seu caso. Nossos especialistas estão prontos para ajudar.
                 </p>
                 <div className="flex flex-col gap-6">
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 mt-1">
-                      <HelpCircle className="h-5 w-5 text-gms-gold" />
+                    <div className="flex items-start">
+                      <div className="flex-shrink-0 mt-1">
+                        <HelpCircle className="h-5 w-5 text-gms-gold" />
+                      </div>
+                      <p className="ml-3 opacity-80 text-sm sm:text-base">
+                        <strong className="text-gms-gold">Sem compromisso:</strong> Avaliamos seu caso sem a obrigação de nos contratar.
+                      </p>
                     </div>
-                    <p className="ml-3 opacity-80 text-sm sm:text-base">
-                      <strong className="text-gms-gold">Sem compromisso:</strong> Avaliamos seu caso sem a obrigação de nos contratar.
-                    </p>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 mt-1">
-                      <MessageSquare className="h-5 w-5 text-gms-gold" />
+                    <div className="flex items-start">
+                      <div className="flex-shrink-0 mt-1">
+                        <MessageSquare className="h-5 w-5 text-gms-gold" />
+                      </div>
+                      <p className="ml-3 opacity-80 text-sm sm:text-base">
+                        <strong className="text-gms-gold">Atendimento personalizado:</strong> Tratamos cada caso com a atenção que merece.
+                      </p>
                     </div>
-                    <p className="ml-3 opacity-80 text-sm sm:text-base">
-                      <strong className="text-gms-gold">Atendimento personalizado:</strong> Tratamos cada caso com a atenção que merece.
-                    </p>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 mt-1">
-                      <Calendar className="h-5 w-5 text-gms-gold" />
+                    <div className="flex items-start">
+                      <div className="flex-shrink-0 mt-1">
+                        <ShieldCheck className="h-5 w-5 text-gms-gold" />
+                      </div>
+                      <p className="ml-3 opacity-80 text-sm sm:text-base">
+                        <strong className="text-gms-gold">Sem pagamento adiantado:</strong> Você só paga quando conseguir seu benefício.
+                      </p>
                     </div>
-                    <p className="ml-3 opacity-80 text-sm sm:text-base">
-                      <strong className="text-gms-gold">Vagas limitadas:</strong> Apenas {vagasRestantes} avaliações gratuitas disponíveis esta semana.
-                    </p>
                   </div>
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 mt-1">
-                      <ShieldCheck className="h-5 w-5 text-gms-gold" />
-                    </div>
-                    <p className="ml-3 opacity-80 text-sm sm:text-base">
-                      <strong className="text-gms-gold">Sem pagamento adiantado:</strong> Você só paga quando conseguir seu benefício.
-                    </p>
-                  </div>
-                </div>
               </motion.div>
               
               <motion.div
