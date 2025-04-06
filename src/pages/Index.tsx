@@ -13,7 +13,6 @@ const FAQItem = lazy(() => import("@/components/FAQItem"));
 import LeadForm from "@/components/LeadForm";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import BackToTop from "@/components/BackToTop";
-import ActivityNotification from "@/components/ActivityNotification";
 
 // Global CSS for scrollbar
 const scrollbarStyles = `
@@ -118,9 +117,6 @@ const Index = () => {
     <div className="min-h-screen bg-gms-light overflow-hidden">
       {/* Back to Top Button */}
       <BackToTop />
-      
-      {/* Activity Notification - Positioned as fixed element */}
-      <ActivityNotification />
       
       {/* Fixed Top Banner */}
       <div className="fixed top-0 left-0 w-full bg-[#00001f]/80 text-white z-50 py-3 px-4 text-center shadow-lg backdrop-blur-md backdrop-saturate-150">
