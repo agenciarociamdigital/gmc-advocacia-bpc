@@ -666,22 +666,23 @@ const Index = () => {
 
         {/* CTA Final - adicionar selo de segurança e contador de vagas */}
         <section className="py-12 sm:py-20 bg-gms-brown text-white overflow-hidden">
-          <div className="w-full max-w-full px-4 sm:px-6 overflow-visible">
-            <div className="grid lg:grid-cols-2 gap-8 items-start">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="w-full"
-              >
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
-                  Não perca a oportunidade de garantir seu direito ao BPC/LOAS
-                </h2>
-                <p className="text-lg sm:text-xl opacity-80 mb-6">
-                  Preencha o formulário e receba uma avaliação gratuita do seu caso. Nossos especialistas estão prontos para ajudar.
-                </p>
-                <div className="flex flex-col gap-6">
+          <div className="gms-container px-4 sm:px-6 overflow-visible">
+            <div className="max-w-6xl mx-auto">
+              <div className="grid lg:grid-cols-2 gap-8 items-start">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                  className="w-full max-w-xl"
+                >
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
+                    Não perca a oportunidade de garantir seu direito ao BPC/LOAS
+                  </h2>
+                  <p className="text-lg sm:text-xl opacity-80 mb-6">
+                    Preencha o formulário e receba uma avaliação gratuita do seu caso. Nossos especialistas estão prontos para ajudar.
+                  </p>
+                  <div className="flex flex-col gap-6">
                     <div className="flex items-start">
                       <div className="flex-shrink-0 mt-1">
                         <HelpCircle className="h-5 w-5 text-gms-gold" />
@@ -707,27 +708,28 @@ const Index = () => {
                       </p>
                     </div>
                   </div>
-              </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="w-full flex justify-center"
-              >
-                <div className="w-full mx-auto relative">
-                  <div className="w-full flex justify-center">
-                    <LeadForm className="w-full max-w-[340px] sm:max-w-md" />
+                </motion.div>
+                
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                  className="w-full flex justify-center"
+                >
+                  <div className="w-full mx-auto relative">
+                    <div className="w-full flex justify-center">
+                      <LeadForm className="w-full max-w-[340px] sm:max-w-md" />
+                    </div>
+                    
+                    {/* Selo de segurança centralizado abaixo do formulário */}
+                    <div className="absolute -bottom-4 left-0 right-0 mx-auto w-max bg-white/90 text-gms-brown px-4 py-1.5 rounded-md text-xs flex items-center gap-1 shadow-md">
+                      <Lock className="h-3 w-3" />
+                      Seus dados estão protegidos
+                    </div>
                   </div>
-                  
-                  {/* Selo de segurança centralizado abaixo do formulário */}
-                  <div className="absolute -bottom-4 left-0 right-0 mx-auto w-max bg-white/90 text-gms-brown px-4 py-1.5 rounded-md text-xs flex items-center gap-1 shadow-md">
-                    <Lock className="h-3 w-3" />
-                    Seus dados estão protegidos
-                  </div>
-                </div>
-              </motion.div>
+                </motion.div>
+              </div>
             </div>
           </div>
         </section>
