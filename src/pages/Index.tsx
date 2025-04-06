@@ -215,11 +215,6 @@ const Index = () => {
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
                 <div className="relative">
-                  {/* Indicador de vagas limitadas centralizado acima do formulário */}
-                  <div className="absolute -top-4 left-0 right-0 mx-auto w-max bg-red-600 text-white px-4 py-1.5 rounded-full font-bold text-sm shadow-lg animate-pulse z-10">
-                    Restam apenas {vagasRestantes} vagas!
-                  </div>
-                  
                   <LeadForm className="hover:scale-[1.01] transition-transform duration-300" />
                   
                   {/* Selo de segurança centralizado abaixo do formulário */}
@@ -739,11 +734,6 @@ const Index = () => {
                 className="w-full flex justify-center"
               >
                 <div className="w-full mx-auto relative">
-                  {/* Indicador de vagas limitadas centralizado acima do formulário */}
-                  <div className="absolute -top-4 left-0 right-0 mx-auto w-max bg-red-600 text-white px-4 py-1.5 rounded-full font-bold text-sm shadow-lg animate-pulse z-10">
-                    Restam apenas {vagasRestantes} vagas!
-                  </div>
-                  
                   <div className="w-full flex justify-center">
                     <LeadForm className="w-full max-w-[340px] sm:max-w-md" />
                   </div>
