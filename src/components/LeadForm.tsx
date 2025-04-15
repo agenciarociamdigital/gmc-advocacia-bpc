@@ -26,7 +26,7 @@ const LeadForm = ({ className }: LeadFormProps) => {
   const [submitted, setSubmitted] = useState(false);
   
   // Webhook URL
-  const webhookUrl = "https://services.leadconnectorhq.com/hooks/OENr4Dm8dvAwqM3OCwUk/webhook-trigger/c088f6b6-6ca5-428c-b72a-f2935008a86f";
+  const webhookUrl = "https://services.leadconnectorhq.com/hooks/twiyIpX5OYy0CPHGkznE/webhook-trigger/7f37b9f6-dfc5-4fe1-8337-a6f67bdbe7ab";
 
   // Function to send data to CRM webhook
   const sendToCRM = useCallback(async (formData: { name: string, phone: string, clientType: string }) => {
