@@ -8,7 +8,6 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 // Lazy load non-critical components
 const EligibilityCard = lazy(() => import("@/components/EligibilityCard"));
 const ProcessStep = lazy(() => import("@/components/ProcessStep"));
-const TestimonialCard = lazy(() => import("@/components/TestimonialCard"));
 const FAQItem = lazy(() => import("@/components/FAQItem"));
 import LeadForm from "@/components/LeadForm";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
@@ -124,7 +123,7 @@ const Index = () => {
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 animate-bounce" viewBox="0 0 20 20" fill="currentColor">
             <path fillRule="evenodd" d="M16.707 10.293a1 1 0 010 1.414l-6 6a1 1 0 01-1.414 0l-6-6a1 1 0 111.414-1.414L9 14.586V3a1 1 0 012 0v11.586l4.293-4.293a1 1 0 011.414 0z" clipRule="evenodd" />
           </svg>
-          <span>TEM 65 ANOS OU MAIS?</span>
+          <span>CONHEÇA SEUS DIREITOS COM ESPECIALISTAS BPC LOAS</span>
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 animate-bounce" viewBox="0 0 20 20" fill="currentColor">
             <path fillRule="evenodd" d="M16.707 10.293a1 1 0 010 1.414l-6 6a1 1 0 01-1.414 0l-6-6a1 1 0 111.414-1.414L9 14.586V3a1 1 0 012 0v11.586l4.293-4.293a1 1 0 011.414 0z" clipRule="evenodd" />
           </svg>
@@ -192,7 +191,7 @@ const Index = () => {
                   </div>
                   
                   <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
-                    <WhatsAppButton text="Avalie Seu Caso Gratuitamente" />
+                    <WhatsAppButton text="Avalie Seu Caso" />
                     <a 
                       href="#quem-tem-direito" 
                       className="primary-button border border-white/20 bg-transparent hover:bg-white/10 flex items-center justify-center gap-2 w-full sm:w-auto py-3 px-6 text-base font-medium"
@@ -314,7 +313,7 @@ const Index = () => {
                 {
                   icon: <ShieldCheck className="h-10 w-10" />,
                   title: "Sem Custos Iniciais",
-                  description: "Você só paga em caso de êxito no processo."
+                  description: "Você só paga em caso de êxito no processo ou no pedido administriativo junto ao INSS."
                 },
                 {
                   icon: <Briefcase className="h-10 w-10" />,
@@ -432,51 +431,6 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Depoimentos */}
-        <section className="py-20 bg-gms-brown/5">
-          <div className="gms-container">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-              >
-                <h2 className="text-3xl md:text-4xl font-bold text-gms-brown mb-4">
-                  O que dizem nossos clientes
-                </h2>
-                <div className="h-1 w-24 bg-gms-gold mx-auto mb-6"></div>
-                <p className="text-lg text-gray-600">
-                  Histórias reais de pessoas que conseguiram seu benefício com nossa ajuda.
-                </p>
-              </motion.div>
-            </div>
-
-            <Suspense fallback={<div className="min-h-[300px] flex items-center justify-center">Carregando depoimentos...</div>}>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <TestimonialCard 
-                  quote="A GMS Advocacia mudou minha vida. Eu não sabia que tinha direito ao BPC, e eles cuidaram de tudo. Agora recebo meu benefício mensalmente."
-                  name="Maria Silva"
-                  location="São Sebastião da Amoreira"
-                  benefit="BPC/LOAS Idoso"
-                />
-                <TestimonialCard 
-                  quote="Meu filho tem autismo e precisávamos do benefício. Tentamos sozinhos e foi negado. Com a GMS, conseguimos em menos de um ano."
-                  name="João Oliveira"
-                  location="Cornélio Procópio"
-                  benefit="BPC/LOAS Deficiência"
-                />
-                <TestimonialCard 
-                  quote="Profissionais competentes e atenciosos. Explicaram tudo com paciência e não cobraram nada até eu ganhar o processo."
-                  name="Ana Paula Santos"
-                  location="Nova América da Colina"
-                  benefit="BPC/LOAS Idoso"
-                />
-              </div>
-            </Suspense>
-          </div>
-        </section>
-
         {/* Documentos necessários */}
         <section className="py-20 bg-white overflow-hidden">
           <div className="gms-container px-4 sm:px-6">
@@ -590,7 +544,7 @@ const Index = () => {
                   </div>
                   <div className="p-6 sm:p-8">
                     <h3 className="text-2xl font-bold text-gms-brown mb-4">
-                      Conte com nossa experiência
+                    Contamos com profissionais com experiência no direito previdenciário!
                     </h3>
                     <p className="text-gray-600 mb-4">
                       Nosso escritório tem mais de 2 anos de experiência em Direito Previdenciário, com foco especialmente em BPC/LOAS.

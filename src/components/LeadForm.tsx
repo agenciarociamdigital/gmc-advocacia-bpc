@@ -153,7 +153,7 @@ const LeadForm = ({ className }: LeadFormProps) => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <h3 className="text-2xl font-bold text-gms-brown mb-4">Avalie Seu Caso Gratuitamente</h3>
+          <h3 className="text-2xl font-bold text-gms-brown mb-4">Entre em contato, informe-se!</h3>
           
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
@@ -232,7 +232,7 @@ const LeadForm = ({ className }: LeadFormProps) => {
           
           <div className="pt-2">
             <WhatsAppButton 
-              text="Receber Avaliação Gratuita" 
+              text="Avalie Seu Caso" 
               fullWidth
               size="lg"
               onClick={handleSubmit}
