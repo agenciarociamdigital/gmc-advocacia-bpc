@@ -42,6 +42,7 @@ const scrollbarStyles = `
 
 const Index = () => {
   const [showFloatingWhatsApp, setShowFloatingWhatsApp] = useState(false);
+  const [showCookieConsent, setShowCookieConsent] = useState(true);
   const quemTemDireitoRef = useRef<HTMLElement>(null);
   const [vagasRestantes, setVagasRestantes] = useState(20);
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -108,12 +109,40 @@ const Index = () => {
     // Gerar um número aleatório entre 5 e 20 para vagas restantes
     setVagasRestantes(Math.floor(Math.random() * 16) + 5);
 
+    // Check if user has already accepted cookies
+    const cookiesAccepted = localStorage.getItem('cookiesAccepted');
+    if (cookiesAccepted) {
+      setShowCookieConsent(false);
+    }
+
     // Remove event listener on cleanup
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleAcceptCookies = () => {
+    localStorage.setItem('cookiesAccepted', 'true');
+    setShowCookieConsent(false);
+  };
+
   return (
     <div className="min-h-screen bg-gms-light overflow-hidden">
+      {/* Cookie Consent Banner */}
+      {showCookieConsent && (
+        <div className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-lg z-50 border-t border-gms-gold/20">
+          <div className="gms-container px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-sm text-gray-600 text-center sm:text-left">
+              Este site utiliza cookies para melhorar sua experiência. Ao continuar navegando, você aceita nossa política de cookies.
+            </p>
+            <button
+              onClick={handleAcceptCookies}
+              className="bg-gms-gold hover:bg-gms-gold/90 text-white px-6 py-2 rounded-md text-sm font-medium transition-colors whitespace-nowrap"
+            >
+              Aceitar
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Back to Top Button */}
       <BackToTop />
       
