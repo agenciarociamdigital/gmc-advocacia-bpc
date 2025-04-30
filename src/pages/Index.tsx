@@ -370,7 +370,7 @@ const Index = () => {
             <div className="flex justify-center mt-12">
               <div className="max-w-2xl text-center">
                 <p className="text-lg italic opacity-80 mb-6">
-                  "Nosso escritório é especializado em BPC/LOAS. A avaliação é gratuita e os serviços só serão cobrados em caso de aprovação do benefício."
+                  "Nosso escritório é especializado em BPC/LOAS. A avaliação é gratuita e os serviços só serão cobrados em caso de aprovação do benefício."
                 </p>
                 <div className="flex justify-center">
                   <img 
@@ -384,6 +384,274 @@ const Index = () => {
                 </div>
                 <p className="mt-4 font-serif text-lg">Equipe GMS Advocacia</p>
                 <p className="text-sm bg-gradient-to-r from-amber-500 via-yellow-300 to-amber-500 bg-clip-text text-transparent font-medium">Premiada como "Melhor Escritório de Advocacia de São Sebastião da Amoreira 2023"</p>
+              </div>
+            </div>
+
+            {/* Nossa Equipe - Carrossel de Advogados */}
+            <div className="mt-20">
+              <h3 className="text-2xl md:text-3xl font-bold text-center mb-12">
+                Conheça Nossa <span className="text-gms-gold">Equipe de Especialistas</span>
+              </h3>
+              
+              <div className="max-w-6xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  {/* Advogado 1 */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    className="bg-white/5 rounded-xl overflow-hidden border border-white/10 hover:border-gms-gold/30 transition-all duration-300"
+                  >
+                    <div className="aspect-[4/5] relative">
+                      <img
+                        src="/drluan.jpg"
+                        alt="Dr. Luan Gaspar Santos"
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div className="p-6">
+                      <h4 className="text-xl font-bold text-gms-gold mb-2">Dr. Luan Gaspar Santos</h4>
+                      <p className="text-sm text-white/70 mb-4">OAB/PR 85.072</p>
+                      <p className="text-sm text-white/90 mb-4 italic">Advogado | Mestre em Direito, Sociedade e Tecnologias | Experiência Pública e Docente</p>
+                      
+                      <div className="space-y-4">
+                        <div>
+                          <h5 className="text-gms-gold text-sm font-semibold mb-2">Formação Acadêmica</h5>
+                          <ul className="space-y-2 text-sm text-white/80">
+                            <li className="flex items-start gap-2">
+                              <Award className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
+                              <span>Mestre em Direito, Sociedade e Tecnologias - Faculdades Londrina (2023)</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <Award className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
+                              <span>Bacharel em Direito - Universidade Estadual de Londrina (UEL)</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <Award className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
+                              <span>Pós-graduação em Direito Constitucional Contemporâneo (IDCC)</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <Award className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
+                              <span>Pós-graduação em Direito Processual Civil (FALEGALE)</span>
+                            </li>
+                          </ul>
+                        </div>
+
+                        <div>
+                          <h5 className="text-gms-gold text-sm font-semibold mb-2">Experiência Profissional</h5>
+                          <ul className="space-y-2 text-sm text-white/80">
+                            <li className="flex items-start gap-2">
+                              <Briefcase className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
+                              <span>Empregado público na SANEPAR, cedido à Assembleia Legislativa do Paraná</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <Briefcase className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
+                              <span>Ex-Secretário Municipal de Planejamento e Administração</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <Briefcase className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
+                              <span>Ex-Vereador e Presidente da Câmara Municipal de São Sebastião da Amoreira</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <Briefcase className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
+                              <span>Docente universitário</span>
+                            </li>
+                          </ul>
+                        </div>
+
+                        <div>
+                          <h5 className="text-gms-gold text-sm font-semibold mb-2">Destaques</h5>
+                          <ul className="space-y-2 text-sm text-white/80">
+                            <li className="flex items-start gap-2">
+                              <Check className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
+                              <span>Formação sólida com especializações em Direito Constitucional e Processual Civil</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <Check className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
+                              <span>Experiência multidisciplinar (advocacia, administração pública, docência e política)</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <Check className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
+                              <span>Atuação estratégica em órgãos legislativos e executivos</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  {/* Advogado 2 */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    className="bg-white/5 rounded-xl overflow-hidden border border-white/10 hover:border-gms-gold/30 transition-all duration-300"
+                  >
+                    <div className="aspect-[4/5] relative">
+                      <img
+                        src="/draana.png"
+                        alt="Dra. Ana Elena Oliveira de Souza"
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div className="p-6">
+                      <h4 className="text-xl font-bold text-gms-gold mb-2">Dra. Ana Elena Oliveira de Souza</h4>
+                      <p className="text-sm text-white/90 mb-4 italic">Advogada Multidisciplinar | Cível, Criminal e Trabalhista</p>
+                      
+                      <div className="space-y-4">
+                        <div>
+                          <h5 className="text-gms-gold text-sm font-semibold mb-2">Formação Acadêmica</h5>
+                          <ul className="space-y-2 text-sm text-white/80">
+                            <li className="flex items-start gap-2">
+                              <Award className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
+                              <span>Bacharel em Direito - Universidade Norte do Paraná (UNOPAR)</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <Award className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
+                              <span>Pós-graduação em Direito Aplicado - Escola da Magistratura do Paraná (EMAP)</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <Award className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
+                              <span>Pesquisas em guarda compartilhada e bioética jurídica</span>
+                            </li>
+                          </ul>
+                        </div>
+
+                        <div>
+                          <h5 className="text-gms-gold text-sm font-semibold mb-2">Atuação Profissional</h5>
+                          <ul className="space-y-2 text-sm text-white/80">
+                            <li className="flex items-start gap-2">
+                              <Briefcase className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
+                              <span>Advogada cível, criminal e trabalhista em Londrina-PR e região</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <Briefcase className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
+                              <span>Tutora eletrônica na Kroton Educacional</span>
+                            </li>
+                          </ul>
+                        </div>
+
+                        <div>
+                          <h5 className="text-gms-gold text-sm font-semibold mb-2">Áreas de Expertise</h5>
+                          <ul className="space-y-2 text-sm text-white/80">
+                            <li className="flex items-start gap-2">
+                              <Award className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
+                              <span>Direito Civil: família, contratos, responsabilidade civil</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <Award className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
+                              <span>Direito Penal: defesas estratégicas</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <Award className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
+                              <span>Direito do Trabalho: reclamações trabalhistas, acidentários</span>
+                            </li>
+                          </ul>
+                        </div>
+
+                        <div>
+                          <h5 className="text-gms-gold text-sm font-semibold mb-2">Destaques</h5>
+                          <ul className="space-y-2 text-sm text-white/80">
+                            <li className="flex items-start gap-2">
+                              <Check className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
+                              <span>Visão multidisciplinar para soluções jurídicas integradas</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <Check className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
+                              <span>Experiência acadêmica que agrega profundidade técnica aos casos práticos</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <Check className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
+                              <span>Atuação dedicada em causas individuais e coletivas</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  {/* Advogado 3 */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                    className="bg-white/5 rounded-xl overflow-hidden border border-white/10 hover:border-gms-gold/30 transition-all duration-300"
+                  >
+                    <div className="aspect-[4/5] relative">
+                      <img
+                        src="/drarthur.png"
+                        alt="Dr. Arthur Farias Ramos Marques"
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div className="p-6">
+                      <h4 className="text-xl font-bold text-gms-gold mb-2">Dr. Arthur Farias Ramos Marques</h4>
+                      <p className="text-sm text-white/90 mb-4 italic">Advogado | Especialista em Direito Privado e Direito Civil</p>
+                      
+                      <div className="space-y-4">
+                        <div>
+                          <h5 className="text-gms-gold text-sm font-semibold mb-2">Formação Acadêmica</h5>
+                          <ul className="space-y-2 text-sm text-white/80">
+                            <li className="flex items-start gap-2">
+                              <Award className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
+                              <span>Bacharel em Direito - Universidade Norte do Paraná (UNOPAR)</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <Award className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
+                              <span>Pesquisa acadêmica em excludentes de ilicitude</span>
+                            </li>
+                          </ul>
+                        </div>
+
+                        <div>
+                          <h5 className="text-gms-gold text-sm font-semibold mb-2">Áreas de Atuação</h5>
+                          <ul className="space-y-2 text-sm text-white/80">
+                            <li className="flex items-start gap-2">
+                              <Briefcase className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
+                              <span>Contratos e obrigações</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <Briefcase className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
+                              <span>Responsabilidade civil</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <Briefcase className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
+                              <span>Direitos do consumidor</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <Briefcase className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
+                              <span>Temas polêmicos e estratégicos do Direito Privado</span>
+                            </li>
+                          </ul>
+                        </div>
+
+                        <div>
+                          <h5 className="text-gms-gold text-sm font-semibold mb-2">Diferenciais</h5>
+                          <ul className="space-y-2 text-sm text-white/80">
+                            <li className="flex items-start gap-2">
+                              <Check className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
+                              <span>Formação especializada em questões complexas do Direito Civil</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <Check className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
+                              <span>Atuação prática e objetiva, com foco em soluções eficientes</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <Check className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
+                              <span>Conhecimento aprofundado em excludentes de ilicitude e temas controvertidos</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                </div>
               </div>
             </div>
           </div>
