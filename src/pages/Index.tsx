@@ -492,7 +492,7 @@ const Index = () => {
                   >
                     <div className="aspect-[4/5] relative">
                       <img
-                        src="/draana.png"
+                        src="/adv2.jpg"
                         alt="Dra. Ana Elena Oliveira de Souza"
                         className="w-full h-full object-cover"
                         loading="lazy"
@@ -584,7 +584,7 @@ const Index = () => {
                   >
                     <div className="aspect-[4/5] relative">
                       <img
-                        src="/drarthur.png"
+                        src="/adv1.jpg"
                         alt="Dr. Arthur Farias Ramos Marques"
                         className="w-full h-full object-cover"
                         loading="lazy"
