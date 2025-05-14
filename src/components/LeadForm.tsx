@@ -135,7 +135,7 @@ const LeadForm = ({ className }: LeadFormProps) => {
       const completeMessage = baseMessage + userInfo;
       
       // Usando a URL padrão do WhatsApp (wa.me)
-      const finalUrl = `https://wa.me/5543999843765?text=${encodeURIComponent(completeMessage)}`;
+      const finalUrl = `https://wa.me/554331425888?text=${encodeURIComponent(completeMessage)}`;
       console.log("Redirecting to WhatsApp with URL:", finalUrl);
       
       // Usando window.location para redirecionar na mesma página
