@@ -313,7 +313,7 @@ const Index = () => {
 
         {/* Rest of the sections - Add Suspense for lazy-loaded components */}
         {/* Por que nos escolher */}
-        <section className="py-20 bg-gms-brown text-white">
+        <section id="equipe" className="py-20 bg-gms-brown text-white">
           <div className="gms-container">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <motion.div
@@ -658,7 +658,7 @@ const Index = () => {
         </section>
 
         {/* Processo de Atendimento */}
-        <section className="py-20 bg-white">
+        <section id="processo" className="py-20 bg-white">
           <div className="gms-container">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <motion.div
@@ -729,7 +729,7 @@ const Index = () => {
         </section>
 
         {/* Documentos necessários */}
-        <section className="py-20 bg-white overflow-hidden">
+        <section id="documentos" className="py-20 bg-white overflow-hidden">
           <div className="gms-container px-4 sm:px-6">
             <div className="flex flex-col lg:flex-row items-center gap-12">
               <motion.div 
@@ -858,7 +858,7 @@ const Index = () => {
         </section>
 
         {/* Dúvidas Frequentes */}
-        <section className="py-20 bg-gms-brown/5 overflow-hidden">
+        <section id="duvidas" className="py-20 bg-gms-brown/5 overflow-hidden">
           <div className="gms-container px-2 sm:px-6 max-w-full">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <motion.div
