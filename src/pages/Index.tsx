@@ -500,7 +500,8 @@ const Index = () => {
                     </div>
                     <div className="p-6">
                       <h4 className="text-xl font-bold text-gms-gold mb-2">Dra. Ana Elena Oliveira de Souza</h4>
-                      <p className="text-sm text-white/90 mb-4 italic">Advogada Multidisciplinar | Cível, Criminal e Trabalhista</p>
+                      <p className="text-sm text-white/70 mb-4">OAB desde 2014</p>
+                      <p className="text-sm text-white/90 mb-4 italic">Advogada Especialista em Direito Previdenciário | Sócia da GMS Advocacia</p>
                       
                       <div className="space-y-4">
                         <div>
@@ -508,15 +509,15 @@ const Index = () => {
                           <ul className="space-y-2 text-sm text-white/80">
                             <li className="flex items-start gap-2">
                               <Award className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
-                              <span>Bacharel em Direito - Universidade Norte do Paraná (UNOPAR)</span>
+                              <span>Bacharel em Direito - Universidade Norte do Paraná (UNOPAR) - 2013</span>
                             </li>
                             <li className="flex items-start gap-2">
                               <Award className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
-                              <span>Pós-graduação em Direito Aplicado - Escola da Magistratura do Paraná (EMAP)</span>
+                              <span>Pós-graduação em Direito Aplicado - Escola da Magistratura do Paraná (EMAP) - 2014</span>
                             </li>
                             <li className="flex items-start gap-2">
                               <Award className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
-                              <span>Pesquisas em guarda compartilhada e bioética jurídica</span>
+                              <span>Aperfeiçoamento em Direito Previdenciário - Universidade Pitágoras Unopar Anhanguera - 2022</span>
                             </li>
                           </ul>
                         </div>
@@ -526,11 +527,11 @@ const Index = () => {
                           <ul className="space-y-2 text-sm text-white/80">
                             <li className="flex items-start gap-2">
                               <Briefcase className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
-                              <span>Advogada cível, criminal e trabalhista em Londrina-PR e região</span>
+                              <span>Advogada autônoma inscrita na OAB desde 2014</span>
                             </li>
                             <li className="flex items-start gap-2">
                               <Briefcase className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
-                              <span>Tutora eletrônica na Kroton Educacional</span>
+                              <span>Sócia da GMS Advocacia (Gaspar, Marques e Souza Advocacia) desde 2022</span>
                             </li>
                           </ul>
                         </div>
@@ -540,15 +541,15 @@ const Index = () => {
                           <ul className="space-y-2 text-sm text-white/80">
                             <li className="flex items-start gap-2">
                               <Award className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
-                              <span>Direito Civil: família, contratos, responsabilidade civil</span>
+                              <span>Direito Previdenciário: BPC/LOAS, aposentadorias, auxílios, pensões</span>
                             </li>
                             <li className="flex items-start gap-2">
                               <Award className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
-                              <span>Direito Penal: defesas estratégicas</span>
+                              <span>Direito Civil: família, guarda compartilhada, responsabilidade civil</span>
                             </li>
                             <li className="flex items-start gap-2">
                               <Award className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
-                              <span>Direito do Trabalho: reclamações trabalhistas, acidentários</span>
+                              <span>Direito Aplicado: soluções jurídicas integradas</span>
                             </li>
                           </ul>
                         </div>
@@ -558,15 +559,15 @@ const Index = () => {
                           <ul className="space-y-2 text-sm text-white/80">
                             <li className="flex items-start gap-2">
                               <Check className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
-                              <span>Visão multidisciplinar para soluções jurídicas integradas</span>
+                              <span>Mais de 10 anos de experiência na advocacia (desde 2014)</span>
                             </li>
                             <li className="flex items-start gap-2">
                               <Check className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
-                              <span>Experiência acadêmica que agrega profundidade técnica aos casos práticos</span>
+                              <span>Especialização focada em Direito Previdenciário com formação continuada</span>
                             </li>
                             <li className="flex items-start gap-2">
                               <Check className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
-                              <span>Atuação dedicada em causas individuais e coletivas</span>
+                              <span>Atuação dedicada em causas previdenciárias e benefícios assistenciais</span>
                             </li>
                           </ul>
                         </div>
