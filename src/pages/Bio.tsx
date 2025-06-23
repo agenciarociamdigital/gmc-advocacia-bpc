@@ -54,8 +54,8 @@ const Bio = () => {
             transition={{ duration: 0.5 }}
             className="text-center mb-8"
           >            {/* Logo */}
-            <div className="w-32 mx-auto mb-6">
-              <div className="rounded-xl overflow-hidden">
+            <div className="w-32 mx-auto mb-6 flex justify-center items-center">
+              <div className="rounded-xl overflow-hidden flex justify-center items-center">
                 <Logo />
               </div>
             </div>
