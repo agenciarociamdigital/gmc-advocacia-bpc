@@ -593,7 +593,7 @@ const Index = () => {
                     </div>
                     <div className="p-6">
                       <h4 className="text-xl font-bold text-gms-gold mb-2">Dr. Arthur Farias Ramos Marques</h4>
-                      <p className="text-sm text-white/90 mb-4 italic">Advogado | Especialista em Direito Privado e Direito Civil</p>
+                      <p className="text-sm text-white/90 mb-4 italic">Advogado | Sócio-Proprietário | Procurador Jurídico Adjunto</p>
                       
                       <div className="space-y-4">
                         <div>
@@ -601,51 +601,55 @@ const Index = () => {
                           <ul className="space-y-2 text-sm text-white/80">
                             <li className="flex items-start gap-2">
                               <Award className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
-                              <span>Bacharel em Direito - Universidade Norte do Paraná (UNOPAR)</span>
+                              <span>Bacharel em Direito - UNOPAR (2015)</span>
                             </li>
                             <li className="flex items-start gap-2">
                               <Award className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
-                              <span>Pesquisa acadêmica em excludentes de ilicitude</span>
+                              <span>Especialização em Direito Aplicado à Magistratura - EMAP (2019)</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <Award className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
+                              <span>Especialização em Direito Penal e Processo Penal - UEL (2022)</span>
                             </li>
                           </ul>
                         </div>
 
                         <div>
-                          <h5 className="text-gms-gold text-sm font-semibold mb-2">Áreas de Atuação</h5>
+                          <h5 className="text-gms-gold text-sm font-semibold mb-2">Experiência Profissional</h5>
                           <ul className="space-y-2 text-sm text-white/80">
                             <li className="flex items-start gap-2">
                               <Briefcase className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
-                              <span>Contratos e obrigações</span>
+                              <span>Sócio-Proprietário GMS Advocacia (2022 - Atual)</span>
                             </li>
                             <li className="flex items-start gap-2">
                               <Briefcase className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
-                              <span>Responsabilidade civil</span>
+                              <span>Procurador Jurídico Adjunto - Prefeitura S.S. da Amoreira (2025)</span>
                             </li>
                             <li className="flex items-start gap-2">
                               <Briefcase className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
-                              <span>Direitos do consumidor</span>
+                              <span>Estágio na 3ª Vara Cível de Londrina - EMAP (2018-2019)</span>
                             </li>
                             <li className="flex items-start gap-2">
                               <Briefcase className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
-                              <span>Temas polêmicos e estratégicos do Direito Privado</span>
+                              <span>8+ anos de experiência jurídica prática</span>
                             </li>
                           </ul>
                         </div>
 
                         <div>
-                          <h5 className="text-gms-gold text-sm font-semibold mb-2">Diferenciais</h5>
+                          <h5 className="text-gms-gold text-sm font-semibold mb-2">Especialidades</h5>
                           <ul className="space-y-2 text-sm text-white/80">
                             <li className="flex items-start gap-2">
                               <Check className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
-                              <span>Formação especializada em questões complexas do Direito Civil</span>
+                              <span>Direito Civil e Criminal</span>
                             </li>
                             <li className="flex items-start gap-2">
                               <Check className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
-                              <span>Atuação prática e objetiva, com foco em soluções eficientes</span>
+                              <span>Professor de Curso Profissionalizante Jurídico</span>
                             </li>
                             <li className="flex items-start gap-2">
                               <Check className="h-4 w-4 text-gms-gold flex-shrink-0 mt-1" />
-                              <span>Conhecimento aprofundado em excludentes de ilicitude e temas controvertidos</span>
+                              <span>Formação complementar em Advocacia Criminal e Magistratura</span>
                             </li>
                           </ul>
                         </div>

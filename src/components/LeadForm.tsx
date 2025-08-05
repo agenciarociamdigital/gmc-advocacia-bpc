@@ -127,19 +127,9 @@ const LeadForm = ({ className }: LeadFormProps) => {
       console.error("Error sending lead data to CRM:", error);
     }
     
-    // Redirect to WhatsApp with standardized message
+    // Redirect to thank you page
     setTimeout(() => {
-      // Formatando a mensagem com os dados do usuário
-      const baseMessage = "Olá, eu vim do site e quero ajuda com o meu direito BPC LOAS";
-      const userInfo = `\n\nNome: ${name}\nTelefone: ${phone}\nTipo: ${clientType === 'elderly' ? 'Idoso (65+ anos)' : 'Pessoa com Deficiência'}`;
-      const completeMessage = baseMessage + userInfo;
-      
-      // Usando a URL padrão do WhatsApp (wa.me)
-      const finalUrl = `https://wa.me/554331425888?text=${encodeURIComponent(completeMessage)}`;
-      console.log("Redirecting to WhatsApp with URL:", finalUrl);
-      
-      // Usando window.location para redirecionar na mesma página
-      window.location.href = finalUrl;
+      window.location.href = '/obrigado';
     }, 1500);
   };
 
